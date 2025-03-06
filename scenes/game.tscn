@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://khsg2ndeh4xi"]
+
+[ext_resource type="Texture2D" uid="uid://bm2k102hr7l15" path="res://recursos/background.png" id="1_itbuk"]
+[ext_resource type="Texture2D" uid="uid://c5qjutpc0vobl" path="res://recursos/letras/a.png" id="2_8iahk"]
+
+[sub_resource type="GDScript" id="GDScript_miymi"]
+script/source = "extends TextureRect
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -104.0
+offset_top = -43.0
+offset_right = 1252.0
+offset_bottom = 760.0
+texture = ExtResource("1_itbuk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Letra" type="TextureRect" parent="."]
+offset_left = 605.0
+offset_top = 188.0
+offset_right = 766.0
+offset_bottom = 350.0
+texture = ExtResource("2_8iahk")
+expand_mode = 1
+stretch_mode = 4
+script = SubResource("GDScript_miymi")
