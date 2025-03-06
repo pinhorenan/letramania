@@ -1,0 +1,217 @@
+[gd_scene load_steps=23 format=3 uid="uid://b4pw1nhcnhfnr"]
+
+[ext_resource type="Texture2D" uid="uid://bm2k102hr7l15" path="res://background.png" id="1_04q62"]
+[ext_resource type="Texture2D" uid="uid://43koqftg6bdf" path="res://Menu/Botões/IniciarBase.png" id="3_w46fu"]
+[ext_resource type="Texture2D" uid="uid://osti8074u6kb" path="res://Menu/Botões/IniciarPressed.png" id="4_hsc1j"]
+[ext_resource type="Texture2D" uid="uid://r814d3g8xu4d" path="res://Menu/Botões/IniciarHighlight.png" id="5_hm2o2"]
+[ext_resource type="Texture2D" uid="uid://bbie1elr8c2lx" path="res://Menu/Botões/SairBase.png" id="6_phrpi"]
+[ext_resource type="Texture2D" uid="uid://cikvdk570qy0t" path="res://Menu/Botões/SairPressed.png" id="7_epbvh"]
+[ext_resource type="Texture2D" uid="uid://b2716ysh5gmot" path="res://Menu/Botões/SairHighlight.png" id="8_6l7ad"]
+[ext_resource type="Script" path="res://scripts/sair.gd" id="9_ibr7c"]
+[ext_resource type="Texture2D" uid="uid://dtusgt8y1h4fi" path="res://Menu/Botões/VolumeLigado.png" id="10_w364o"]
+[ext_resource type="Texture2D" uid="uid://dyc66xpyc3fm0" path="res://Menu/Botões/VolumeDesligado.png" id="11_njevh"]
+[ext_resource type="Script" path="res://scripts/Musica_on_off.gd" id="12_12rrd"]
+[ext_resource type="Texture2D" uid="uid://nqbcjwwt8lf6" path="res://Menu/Botões/Configuração.png" id="13_m2x8x"]
+[ext_resource type="Script" path="res://scripts/toConfig.gd" id="14_cq2cc"]
+[ext_resource type="Texture2D" uid="uid://c81ntatbx84im" path="res://Menu/letras/f.png" id="14_t4tlp"]
+[ext_resource type="Script" path="res://scripts/girando.gd" id="15_0vx88"]
+[ext_resource type="Texture2D" uid="uid://bvrcbvavjobie" path="res://Menu/letras/o.png" id="16_str0a"]
+[ext_resource type="Texture2D" uid="uid://dadwlsm5lbuyn" path="res://Menu/letras/r.png" id="17_p1gw0"]
+[ext_resource type="Texture2D" uid="uid://cxn7bo4qgwsn4" path="res://Menu/letras/m.png" id="18_d7kp2"]
+[ext_resource type="Texture2D" uid="uid://c5qjutpc0vobl" path="res://Menu/letras/a.png" id="19_gpfhg"]
+[ext_resource type="Texture2D" uid="uid://cym5f2qsfpxig" path="res://Menu/letras/p.png" id="20_213ko"]
+[ext_resource type="Texture2D" uid="uid://b2wmbjvsu72xr" path="res://Menu/letras/l.png" id="21_xdyxl"]
+[ext_resource type="Texture2D" uid="uid://bkduj3o8acbx5" path="res://Menu/letras/v.png" id="22_xuaro"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_04q62")
+expand_mode = 1
+
+[node name="Botoes" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Iniciar" type="TextureButton" parent="Botoes"]
+custom_minimum_size = Vector2(400, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 356.0
+offset_top = 280.0
+offset_right = 756.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_w46fu")
+texture_pressed = ExtResource("4_hsc1j")
+texture_hover = ExtResource("5_hm2o2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Sair" type="TextureButton" parent="Botoes"]
+custom_minimum_size = Vector2(400, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 356.0
+offset_top = 450.0
+offset_right = 756.0
+offset_bottom = 570.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_phrpi")
+texture_pressed = ExtResource("7_epbvh")
+texture_hover = ExtResource("8_6l7ad")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("9_ibr7c")
+
+[node name="MusgaOnOff" type="TextureButton" parent="Botoes" groups=["BotoesConfig"]]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 508.0
+offset_right = 100.0
+offset_bottom = 578.0
+grow_vertical = 0
+focus_mode = 0
+toggle_mode = true
+action_mode = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+texture_normal = ExtResource("10_w364o")
+texture_pressed = ExtResource("11_njevh")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("12_12rrd")
+
+[node name="Configuraçoes" type="TextureButton" parent="Botoes" groups=["BotoesConfig"]]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1012.0
+offset_top = 508.0
+offset_right = 1082.0
+offset_bottom = 578.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+action_mode = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+texture_normal = ExtResource("13_m2x8x")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("14_cq2cc")
+
+[node name="Titulo" type="Node2D" parent="."]
+
+[node name="F" type="Sprite2D" parent="Titulo"]
+position = Vector2(320, 100)
+rotation = -0.0174533
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_t4tlp")
+script = ExtResource("15_0vx88")
+
+[node name="O" type="Sprite2D" parent="Titulo"]
+position = Vector2(440, 100)
+rotation = 0.0261799
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_str0a")
+script = ExtResource("15_0vx88")
+
+[node name="R" type="Sprite2D" parent="Titulo"]
+position = Vector2(560, 100)
+rotation = -0.0349066
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_p1gw0")
+script = ExtResource("15_0vx88")
+
+[node name="M" type="Sprite2D" parent="Titulo"]
+position = Vector2(680, 100)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("18_d7kp2")
+script = ExtResource("15_0vx88")
+
+[node name="A" type="Sprite2D" parent="Titulo"]
+position = Vector2(800, 100)
+rotation = 0.0349066
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("19_gpfhg")
+script = ExtResource("15_0vx88")
+
+[node name="A2" type="Sprite2D" parent="Titulo"]
+position = Vector2(320, 200)
+rotation = 0.0261799
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("19_gpfhg")
+script = ExtResource("15_0vx88")
+
+[node name="P" type="Sprite2D" parent="Titulo"]
+position = Vector2(200, 200)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("20_213ko")
+script = ExtResource("15_0vx88")
+
+[node name="L" type="Sprite2D" parent="Titulo"]
+position = Vector2(440, 200)
+rotation = -0.0174533
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("21_xdyxl")
+script = ExtResource("15_0vx88")
+
+[node name="A3" type="Sprite2D" parent="Titulo"]
+position = Vector2(560, 200)
+rotation = 0.0261799
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("19_gpfhg")
+script = ExtResource("15_0vx88")
+
+[node name="V" type="Sprite2D" parent="Titulo"]
+position = Vector2(680, 200)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("22_xuaro")
+script = ExtResource("15_0vx88")
+
+[node name="R2" type="Sprite2D" parent="Titulo"]
+position = Vector2(800, 200)
+rotation = -0.0261799
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_p1gw0")
+script = ExtResource("15_0vx88")
+
+[node name="A4" type="Sprite2D" parent="Titulo"]
+position = Vector2(920, 200)
+rotation = 0.0174533
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("19_gpfhg")
+script = ExtResource("15_0vx88")
+
+[connection signal="pressed" from="Botoes/Sair" to="Botoes/Sair" method="_on_pressed"]
+[connection signal="pressed" from="Botoes/MusgaOnOff" to="Botoes/MusgaOnOff" method="_on_pressed"]
+[connection signal="pressed" from="Botoes/Configuraçoes" to="Botoes/Configuraçoes" method="_on_pressed"]

@@ -13,15 +13,21 @@ config_version=5
 config/name="Forma Palavra"
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://Menu/letras/p.png"
+config/icon="res://recursos/letras/p.png"
 
 [audio]
 
-buses/default_bus_layout="res://scripts/default_bus_layout.tres"
+buses/default_bus_layout="res://scripts/global/default_bus_layout.tres"
 
-[global_group]
+[autoload]
 
-BotoesConfig="Botoes de configuração"
+Musica="*res://scenes/Musica.tscn"
+Configuracoes="*res://scripts/global/configsGlobal.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [input]
 
