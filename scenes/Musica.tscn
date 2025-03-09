@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://b20qatuoi127n"]
 
-[ext_resource type="AudioStream" uid="uid://7yca6go0vkgy" path="res://recursos/musicas e fontes/FlyAway8bits.mp3" id="1_awwh5"]
+[ext_resource type="AudioStream" uid="uid://blqeo0ubpwdvu" path="res://recursos/musicas e fontes/Melissa8Bits.mp3" id="1_m6672"]
 
 [node name="Musica" type="AudioStreamPlayer"]
-stream = ExtResource("1_awwh5")
-volume_db = -10.0
+stream = ExtResource("1_m6672")
+volume_db = -20.0
 autoplay = true
 bus = &"Musica"

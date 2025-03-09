@@ -1,39 +1,417 @@
-[gd_scene load_steps=4 format=3 uid="uid://khsg2ndeh4xi"]
+[gd_scene load_steps=30 format=3 uid="uid://khsg2ndeh4xi"]
 
 [ext_resource type="Texture2D" uid="uid://bm2k102hr7l15" path="res://recursos/background.png" id="1_itbuk"]
-[ext_resource type="Texture2D" uid="uid://c5qjutpc0vobl" path="res://recursos/letras/a.png" id="2_8iahk"]
-
-[sub_resource type="GDScript" id="GDScript_miymi"]
-script/source = "extends TextureRect
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
+[ext_resource type="Script" path="res://scripts/game/ocupado.gd" id="2_0v8sj"]
+[ext_resource type="Texture2D" uid="uid://uk2o0xd3deqh" path="res://icon.svg" id="2_4ewmj"]
+[ext_resource type="Script" path="res://scripts/game/area_colisao.gd" id="2_65ee8"]
+[ext_resource type="Script" path="res://scenes/botoesGame.gd" id="2_75y6d"]
+[ext_resource type="Script" path="res://scripts/game/arrastar.gd" id="3_s6wji"]
+[ext_resource type="Texture2D" uid="uid://c5qjutpc0vobl" path="res://recursos/letras/a.png" id="4_75olx"]
+[ext_resource type="Texture2D" uid="uid://dwksg8fcc1hcb" path="res://recursos/letras/b.png" id="6_f7p2w"]
+[ext_resource type="Texture2D" uid="uid://cu8wnnoduap2l" path="res://recursos/letras/c.png" id="7_uss7y"]
+[ext_resource type="Texture2D" uid="uid://b56n6qyo6l51j" path="res://recursos/letras/d.png" id="8_f36fc"]
+[ext_resource type="Texture2D" uid="uid://dxrnorqouoanp" path="res://recursos/letras/e.png" id="9_isedl"]
+[ext_resource type="Texture2D" uid="uid://c81ntatbx84im" path="res://recursos/letras/f.png" id="10_obdsf"]
+[ext_resource type="Texture2D" uid="uid://cnh4rfa0y7nep" path="res://recursos/letras/g.png" id="11_m2kqo"]
+[ext_resource type="Texture2D" uid="uid://dc1tx6niopean" path="res://recursos/letras/h.png" id="12_p8qqq"]
+[ext_resource type="Texture2D" uid="uid://bu6vn3gfx3xv6" path="res://recursos/letras/i.png" id="13_62enl"]
+[ext_resource type="Texture2D" uid="uid://by5yfq650btj4" path="res://recursos/letras/j.png" id="14_ferq6"]
+[ext_resource type="Texture2D" uid="uid://b2wmbjvsu72xr" path="res://recursos/letras/l.png" id="15_e86ls"]
+[ext_resource type="Texture2D" uid="uid://cxn7bo4qgwsn4" path="res://recursos/letras/m.png" id="16_vnwhf"]
+[ext_resource type="Texture2D" uid="uid://b23ut4623xvro" path="res://recursos/letras/n.png" id="17_i0iox"]
+[ext_resource type="Texture2D" uid="uid://bvrcbvavjobie" path="res://recursos/letras/o.png" id="18_qv8pp"]
+[ext_resource type="Texture2D" uid="uid://cym5f2qsfpxig" path="res://recursos/letras/p.png" id="19_yhylh"]
+[ext_resource type="Texture2D" uid="uid://bsiu140uwav2w" path="res://recursos/letras/q.png" id="20_nru7l"]
+[ext_resource type="Texture2D" uid="uid://dadwlsm5lbuyn" path="res://recursos/letras/r.png" id="21_8cf0q"]
+[ext_resource type="Texture2D" uid="uid://dr0bmk1mqct1h" path="res://recursos/letras/s.png" id="22_yex56"]
+[ext_resource type="Texture2D" uid="uid://deu0g3wlv2nr4" path="res://recursos/letras/t.png" id="23_fud1g"]
+[ext_resource type="Texture2D" uid="uid://buqrxymgc167y" path="res://recursos/letras/u.png" id="24_avysu"]
+[ext_resource type="Texture2D" uid="uid://bkduj3o8acbx5" path="res://recursos/letras/v.png" id="25_mq4gg"]
+[ext_resource type="Texture2D" uid="uid://dtusgt8y1h4fi" path="res://recursos/menu/Botões/VolumeLigado.png" id="27_qvc70"]
+[ext_resource type="Texture2D" uid="uid://dyc66xpyc3fm0" path="res://recursos/menu/Botões/VolumeDesligado.png" id="28_bcere"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
-offset_left = -104.0
-offset_top = -43.0
-offset_right = 1252.0
-offset_bottom = 760.0
+offset_left = -68.0
+offset_top = -21.0
+offset_right = 1288.0
+offset_bottom = 782.0
 texture = ExtResource("1_itbuk")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Letra" type="TextureRect" parent="."]
-offset_left = 605.0
-offset_top = 188.0
-offset_right = 766.0
-offset_bottom = 350.0
-texture = ExtResource("2_8iahk")
-expand_mode = 1
-stretch_mode = 4
-script = SubResource("GDScript_miymi")
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 5.0
+offset_bottom = 5.0
+script = ExtResource("2_75y6d")
+
+[node name="Lacunas" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Arrastável" type="ColorRect" parent="Control/Lacunas" groups=["arrastaveis"]]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 170.0
+offset_right = 275.0
+offset_bottom = 255.0
+color = Color(1, 1, 1, 0.392157)
+script = ExtResource("2_0v8sj")
+
+[node name="AreaColisao" type="Area2D" parent="Control/Lacunas/Arrastável"]
+script = ExtResource("2_65ee8")
+
+[node name="Arrastável2" type="ColorRect" parent="Control/Lacunas" groups=["arrastaveis"]]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 170.0
+offset_right = 375.0
+offset_bottom = 255.0
+color = Color(1, 1, 1, 0.392157)
+script = ExtResource("2_0v8sj")
+
+[node name="AreaColisao" type="Area2D" parent="Control/Lacunas/Arrastável2"]
+script = ExtResource("2_65ee8")
+
+[node name="Arrastável3" type="ColorRect" parent="Control/Lacunas" groups=["arrastaveis"]]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 170.0
+offset_right = 475.0
+offset_bottom = 255.0
+color = Color(1, 1, 1, 0.392157)
+script = ExtResource("2_0v8sj")
+
+[node name="AreaColisao" type="Area2D" parent="Control/Lacunas/Arrastável3"]
+script = ExtResource("2_65ee8")
+
+[node name="Arrastável4" type="ColorRect" parent="Control/Lacunas" groups=["arrastaveis"]]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 170.0
+offset_right = 575.0
+offset_bottom = 255.0
+color = Color(1, 1, 1, 0.392157)
+script = ExtResource("2_0v8sj")
+
+[node name="AreaColisao" type="Area2D" parent="Control/Lacunas/Arrastável4"]
+script = ExtResource("2_65ee8")
+
+[node name="Letras" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="a" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 190.0
+offset_top = 330.0
+offset_right = 275.0
+offset_bottom = 415.0
+focus_mode = 0
+icon = ExtResource("4_75olx")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="b" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 290.0
+offset_top = 330.0
+offset_right = 375.0
+offset_bottom = 415.0
+focus_mode = 0
+icon = ExtResource("6_f7p2w")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="c" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 390.0
+offset_top = 330.0
+offset_right = 475.0
+offset_bottom = 415.0
+focus_mode = 0
+icon = ExtResource("7_uss7y")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="d" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 490.0
+offset_top = 330.0
+offset_right = 575.0
+offset_bottom = 415.0
+focus_mode = 0
+icon = ExtResource("8_f36fc")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="e" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 590.0
+offset_top = 330.0
+offset_right = 675.0
+offset_bottom = 415.0
+focus_mode = 0
+icon = ExtResource("9_isedl")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="f" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 690.0
+offset_top = 330.0
+offset_right = 775.0
+offset_bottom = 415.0
+focus_mode = 0
+icon = ExtResource("10_obdsf")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="g" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 790.0
+offset_top = 330.0
+offset_right = 875.0
+offset_bottom = 415.0
+focus_mode = 0
+icon = ExtResource("11_m2kqo")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="h" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 890.0
+offset_top = 330.0
+offset_right = 975.0
+offset_bottom = 415.0
+focus_mode = 0
+icon = ExtResource("12_p8qqq")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="i" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 190.0
+offset_top = 430.0
+offset_right = 275.0
+offset_bottom = 515.0
+focus_mode = 0
+icon = ExtResource("13_62enl")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="j" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 290.0
+offset_top = 430.0
+offset_right = 375.0
+offset_bottom = 515.0
+focus_mode = 0
+icon = ExtResource("14_ferq6")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="l" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 390.0
+offset_top = 430.0
+offset_right = 475.0
+offset_bottom = 515.0
+focus_mode = 0
+icon = ExtResource("15_e86ls")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="m" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 490.0
+offset_top = 430.0
+offset_right = 575.0
+offset_bottom = 515.0
+focus_mode = 0
+icon = ExtResource("16_vnwhf")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="n" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 590.0
+offset_top = 430.0
+offset_right = 675.0
+offset_bottom = 515.0
+focus_mode = 0
+icon = ExtResource("17_i0iox")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="o" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 690.0
+offset_top = 430.0
+offset_right = 775.0
+offset_bottom = 515.0
+focus_mode = 0
+icon = ExtResource("18_qv8pp")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="p" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 790.0
+offset_top = 430.0
+offset_right = 875.0
+offset_bottom = 515.0
+focus_mode = 0
+icon = ExtResource("19_yhylh")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="q" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 890.0
+offset_top = 430.0
+offset_right = 975.0
+offset_bottom = 515.0
+focus_mode = 0
+icon = ExtResource("20_nru7l")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="r" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 290.0
+offset_top = 530.0
+offset_right = 375.0
+offset_bottom = 615.0
+focus_mode = 0
+icon = ExtResource("21_8cf0q")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="s" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 390.0
+offset_top = 530.0
+offset_right = 475.0
+offset_bottom = 615.0
+focus_mode = 0
+icon = ExtResource("22_yex56")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="t" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 490.0
+offset_top = 530.0
+offset_right = 575.0
+offset_bottom = 615.0
+focus_mode = 0
+icon = ExtResource("23_fud1g")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="u" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 590.0
+offset_top = 530.0
+offset_right = 675.0
+offset_bottom = 615.0
+focus_mode = 0
+icon = ExtResource("24_avysu")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="v" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 690.0
+offset_top = 530.0
+offset_right = 775.0
+offset_bottom = 615.0
+focus_mode = 0
+icon = ExtResource("25_mq4gg")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="godot" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 790.0
+offset_top = 530.0
+offset_right = 875.0
+offset_bottom = 615.0
+focus_mode = 0
+icon = ExtResource("2_4ewmj")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="MusgaOnOff" type="TextureButton" parent="Control"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 553.0
+offset_right = 100.0
+offset_bottom = 623.0
+grow_vertical = 0
+focus_mode = 0
+toggle_mode = true
+action_mode = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+texture_normal = ExtResource("27_qvc70")
+texture_pressed = ExtResource("28_bcere")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="Control/MusgaOnOff" to="Control" method="_on_musga_on_off_pressed"]
+[connection signal="pressed" from="Control/MusgaOnOff" to="Control/MusgaOnOff" method="_on_pressed"]

@@ -23,11 +23,16 @@ buses/default_bus_layout="res://scripts/global/default_bus_layout.tres"
 
 Musica="*res://scenes/Musica.tscn"
 Configuracoes="*res://scripts/global/configsGlobal.gd"
+Jogo="res://scripts/global/gameGlobal.gd"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[global_group]
+
+arrastaveis=""
 
 [input]
 
