@@ -4,25 +4,37 @@ var is_dragging := false
 var offset := Vector2()
 var original_position := Vector2()
 var current_snap_area: Node = null
+var is_snapped := false  # Indica se a letra está encaixada
 
 func _ready():
 	original_position = position
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		is_dragging = event.pressed
-		if is_dragging:
-			offset = get_local_mouse_position()
-			if current_snap_area:
+		if event.pressed:  # Botão pressionado
+			if is_snapped:
+				# Se a letra já está encaixada, permita movê-la novamente
 				current_snap_area.is_occupied = false
 				current_snap_area.modulate.a = 1.0  # Resetar opacidade
 				current_snap_area = null
-		else:
+				is_snapped = false
+			is_dragging = true
+			offset = get_local_mouse_position()
+		else:  # Botão solto
+			is_dragging = false
 			if current_snap_area and not current_snap_area.is_occupied:
+				# Encaixa a letra na área
 				current_snap_area.is_occupied = true
-				current_snap_area.modulate.a = 1.0  # Opacidade total ao encaixar
+				current_snap_area.modulate.a = 0.0  # Opacidade total ao encaixar
 				position = current_snap_area.global_position - get_parent().global_position
+				is_snapped = true
+				
+				# Cria um novo botão na posição original
+				var new_button = duplicate()
+				new_button.position = original_position
+				get_parent().add_child(new_button)
 			else:
+				# Retorna à posição original se não encaixar
 				position = original_position
 			accept_event()
 	
@@ -34,7 +46,7 @@ func _gui_input(event: InputEvent) -> void:
 func check_snap_area():
 	for area in get_tree().get_nodes_in_group("arrastaveis"):
 		if not area.is_occupied:
-			area.modulate.a = 0.5
+			area.modulate.a = 0.8  # Feedback visual para áreas disponíveis
 	
 	current_snap_area = null
 	for area in get_tree().get_nodes_in_group("arrastaveis"):
@@ -42,5 +54,5 @@ func check_snap_area():
 			continue
 		if area.get_global_rect().has_point(get_global_mouse_position()):
 			current_snap_area = area
-			area.modulate.a = 0.2
+			area.modulate.a = 1.2  # Feedback visual para área sob o mouse
 			break
