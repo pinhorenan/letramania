@@ -19,9 +19,13 @@ func _gui_input(event: InputEvent) -> void:
 				current_snap_area = null
 		else:
 			if current_snap_area and not current_snap_area.is_occupied:
+				var clone = get_parent().get_node(self.get_path()).duplicate()
+				add_child(clone)
+				#var clone = get_node(self.get_path()).duplicate()
 				current_snap_area.is_occupied = true
 				current_snap_area.modulate.a = 1.0  # Opacidade total ao encaixar
-				position = current_snap_area.global_position - get_parent().global_position
+				clone.position = current_snap_area.global_position - get_parent().global_position
+				position = original_position
 			else:
 				position = original_position
 			accept_event()
