@@ -7,9 +7,10 @@ var current_snap_area: Node = null
 var is_snapped := false  # Indica se a letra está encaixada
 
 func _ready():
-	original_position = position
+    original_position = position
 
 func _gui_input(event: InputEvent) -> void:
+<<<<<<< HEAD
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:  # Botão pressionado
 			if is_snapped:
