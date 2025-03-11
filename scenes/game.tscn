@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://khsg2ndeh4xi"]
+[gd_scene load_steps=38 format=3 uid="uid://khsg2ndeh4xi"]
 
 [ext_resource type="Texture2D" uid="uid://bm2k102hr7l15" path="res://recursos/background.png" id="1_itbuk"]
 [ext_resource type="Script" path="res://scripts/game/ocupado.gd" id="2_0v8sj"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/game/arrastar.gd" id="3_s6wji"]
 [ext_resource type="Texture2D" uid="uid://c5qjutpc0vobl" path="res://recursos/letras/a.png" id="4_75olx"]
 [ext_resource type="Texture2D" uid="uid://dwksg8fcc1hcb" path="res://recursos/letras/b.png" id="6_f7p2w"]
+[ext_resource type="Script" path="res://scenes/gaps.gd" id="6_sg7ji"]
 [ext_resource type="Texture2D" uid="uid://cu8wnnoduap2l" path="res://recursos/letras/c.png" id="7_uss7y"]
 [ext_resource type="Texture2D" uid="uid://b56n6qyo6l51j" path="res://recursos/letras/d.png" id="8_f36fc"]
 [ext_resource type="Texture2D" uid="uid://dxrnorqouoanp" path="res://recursos/letras/e.png" id="9_isedl"]
@@ -80,101 +81,18 @@ script = ExtResource("34_0w6ho")
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("6_sg7ji")
 
 [node name="Arrastável" type="ColorRect" parent="Control/Lacunas" groups=["arrastaveis"]]
 layout_mode = 0
-offset_left = 190.0
-offset_top = 220.0
-offset_right = 265.0
-offset_bottom = 295.0
+offset_left = -279.0
+offset_top = 195.0
+offset_right = -204.0
+offset_bottom = 270.0
 color = Color(1, 1, 1, 0.196078)
 script = ExtResource("2_0v8sj")
 
 [node name="AreaColisao" type="Area2D" parent="Control/Lacunas/Arrastável"]
-script = ExtResource("2_65ee8")
-
-[node name="Arrastável2" type="ColorRect" parent="Control/Lacunas" groups=["arrastaveis"]]
-layout_mode = 0
-offset_left = 290.0
-offset_top = 220.0
-offset_right = 365.0
-offset_bottom = 295.0
-color = Color(1, 1, 1, 0.196078)
-script = ExtResource("2_0v8sj")
-
-[node name="AreaColisao" type="Area2D" parent="Control/Lacunas/Arrastável2"]
-script = ExtResource("2_65ee8")
-
-[node name="Arrastável3" type="ColorRect" parent="Control/Lacunas" groups=["arrastaveis"]]
-layout_mode = 0
-offset_left = 390.0
-offset_top = 220.0
-offset_right = 465.0
-offset_bottom = 295.0
-color = Color(1, 1, 1, 0.196078)
-script = ExtResource("2_0v8sj")
-
-[node name="AreaColisao" type="Area2D" parent="Control/Lacunas/Arrastável3"]
-script = ExtResource("2_65ee8")
-
-[node name="Arrastável4" type="ColorRect" parent="Control/Lacunas" groups=["arrastaveis"]]
-layout_mode = 0
-offset_left = 490.0
-offset_top = 220.0
-offset_right = 565.0
-offset_bottom = 295.0
-color = Color(1, 1, 1, 0.196078)
-script = ExtResource("2_0v8sj")
-
-[node name="AreaColisao" type="Area2D" parent="Control/Lacunas/Arrastável4"]
-script = ExtResource("2_65ee8")
-
-[node name="Arrastável5" type="ColorRect" parent="Control/Lacunas" groups=["arrastaveis"]]
-layout_mode = 0
-offset_left = 190.0
-offset_top = 100.0
-offset_right = 265.0
-offset_bottom = 175.0
-color = Color(1, 1, 1, 0.196078)
-script = ExtResource("2_0v8sj")
-
-[node name="AreaColisao" type="Area2D" parent="Control/Lacunas/Arrastável5"]
-script = ExtResource("2_65ee8")
-
-[node name="Arrastável6" type="ColorRect" parent="Control/Lacunas" groups=["arrastaveis"]]
-layout_mode = 0
-offset_left = 290.0
-offset_top = 100.0
-offset_right = 365.0
-offset_bottom = 175.0
-color = Color(1, 1, 1, 0.196078)
-script = ExtResource("2_0v8sj")
-
-[node name="AreaColisao" type="Area2D" parent="Control/Lacunas/Arrastável6"]
-script = ExtResource("2_65ee8")
-
-[node name="Arrastável7" type="ColorRect" parent="Control/Lacunas" groups=["arrastaveis"]]
-layout_mode = 0
-offset_left = 390.0
-offset_top = 100.0
-offset_right = 465.0
-offset_bottom = 175.0
-color = Color(1, 1, 1, 0.196078)
-script = ExtResource("2_0v8sj")
-
-[node name="AreaColisao" type="Area2D" parent="Control/Lacunas/Arrastável7"]
-script = ExtResource("2_65ee8")
-
-[node name="Arrastável8" type="ColorRect" parent="Control/Lacunas" groups=["arrastaveis"]]
-layout_mode = 0
-offset_left = 490.0
-offset_top = 100.0
-offset_right = 565.0
-offset_bottom = 175.0
-color = Color(1, 1, 1, 0.196078)
-script = ExtResource("2_0v8sj")
-
-[node name="AreaColisao" type="Area2D" parent="Control/Lacunas/Arrastável8"]
 script = ExtResource("2_65ee8")
 
 [node name="Letras" type="Control" parent="Control"]
