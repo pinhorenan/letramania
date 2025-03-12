@@ -1,8 +1,6 @@
 extends Control
 
-var first_word = []
-var second_word = []
-var third_word = []
+var selected_words = [[], [], []]
 
 var words = [
 	{"image": "", "word": "CASA"},
@@ -48,16 +46,22 @@ func set_gaps(array_size: int) -> void: # Criação dos espaços para as palavra
 				break
 	# NOTA: Talvez fazer um try-catch/except pras palavras das fases subsequentes. Isso evitaria a necessidade de "limpar" a tela toda vez que o jogador passasse de fase.
 	for n in array_size: # Cada letra é um array com dois elementos. 0 = Área, 1 = Caractere
-		first_word.append([get_node("Arrastável").duplicate(), first_word_str[n]])
-		add_child(first_word[n][0])
-		first_word[n][0].position = Vector2(x, 60)		
-		second_word.append([get_node("Arrastável").duplicate(), second_word_str[n]])
-		add_child(second_word[n][0])
-		second_word[n][0].position = Vector2(x, 160)
-		third_word.append([get_node("Arrastável").duplicate(), third_word_str[n]])
-		add_child(third_word[n][0])
-		third_word[n][0].position = Vector2(x, 260)
+		selected_words[0].append([get_node("Arrastável").duplicate(), first_word_str[n]]) # Primeira palavra
+		add_child(selected_words[0][n][0])
+		selected_words[0][n][0].position = Vector2(x, 60)
+		
+		selected_words[1].append([get_node("Arrastável").duplicate(), second_word_str[n]]) # Segunda palavra
+		add_child(selected_words[1][n][0])
+		selected_words[1][n][0].position = Vector2(x, 160)
+		
+		selected_words[2].append([get_node("Arrastável").duplicate(), third_word_str[n]]) # Terceira palavra
+		add_child(selected_words[2][n][0])
+		selected_words[2][n][0].position = Vector2(x, 260)
 		x += 80
+	
+	print(first_word_str)
+	print(second_word_str)
+	print(third_word_str)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

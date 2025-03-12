@@ -4,6 +4,7 @@ var is_dragging := false
 var offset := Vector2()
 var original_position := Vector2()
 var current_snap_area: Node = null
+var current_snap_area_letter
 var is_snapped := false  # Indica se a letra está encaixada
 
 func _ready():
@@ -23,7 +24,7 @@ func _gui_input(event: InputEvent) -> void:
 			offset = get_local_mouse_position()
 		else:  # Botão solto
 			is_dragging = false
-			if current_snap_area and not current_snap_area.is_occupied:
+			if current_snap_area and not current_snap_area.is_occupied and current_snap_area_letter == self.name.capitalize():
 				# Encaixa a letra na área
 				current_snap_area.is_occupied = true
 				current_snap_area.modulate.a = 0.0  # Opacidade total ao encaixar
@@ -45,15 +46,19 @@ func _gui_input(event: InputEvent) -> void:
 		accept_event()
 
 func check_snap_area():
-	for area in get_tree().get_nodes_in_group("arrastaveis"):
-		if not area.is_occupied:
-			area.modulate.a = 0.8  # Feedback visual para áreas disponíveis
+	var lacunas = get_node("/root/Node2D/Control/Lacunas") 
+	for word in lacunas.selected_words: # Cada palavra
+		for letter in word: 
+			if not letter[0].is_occupied:
+				letter[0].modulate.a = 0.8  # Feedback visual para áreas disponíveis
 	
 	current_snap_area = null
-	for area in get_tree().get_nodes_in_group("arrastaveis"):
-		if area.is_occupied:
-			continue
-		if area.get_global_rect().has_point(get_global_mouse_position()):
-			current_snap_area = area
-			area.modulate.a = 1.2  # Feedback visual para área sob o mouse
-			break
+	for word in lacunas.selected_words:
+		for letter in word:
+			if letter[0].is_occupied:
+				continue
+			if letter[0].get_global_rect().has_point(get_global_mouse_position()):
+				current_snap_area = letter[0]
+				current_snap_area_letter = letter[1]
+				letter[0].modulate.a = 1.2  # Feedback visual para área sob o mouse
+				break
