@@ -24,20 +24,18 @@ func _gui_input(event: InputEvent) -> void:
 			offset = get_local_mouse_position()
 		else:  # Botão solto
 			is_dragging = false
-			if current_snap_area and not current_snap_area.is_occupied and current_snap_area_letter == self.name.capitalize():
-				# Encaixa a letra na área
+			if current_snap_area and not current_snap_area.is_occupied and current_snap_area_letter == self.name:
+				# Cria um novo botão para preencher a área
+				var new_button = duplicate()
+				
+				# Encaixa a cópia da letra na área
 				current_snap_area.is_occupied = true
 				current_snap_area.modulate.a = 0.0  # Opacidade total ao encaixar
-				position = current_snap_area.global_position - get_parent().global_position
+				new_button.position = current_snap_area.global_position - get_parent().global_position
+				get_parent().add_child(new_button)
 				is_snapped = true
 				
-				# Cria um novo botão na posição original
-				var new_button = duplicate()
-				new_button.position = original_position
-				get_parent().add_child(new_button)
-			else:
-				# Retorna à posição original se não encaixar
-				position = original_position
+			position = original_position # move o botão para a posição de origem
 			accept_event()
 	
 	elif event is InputEventMouseMotion and is_dragging:

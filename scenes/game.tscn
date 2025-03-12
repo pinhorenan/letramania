@@ -100,7 +100,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="a" type="Button" parent="Control/Letras"]
+[node name="A" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 256.0
@@ -113,7 +113,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="b" type="Button" parent="Control/Letras"]
+[node name="B" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 656.0
@@ -126,7 +126,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="c" type="Button" parent="Control/Letras"]
+[node name="C" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 496.0
@@ -139,7 +139,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="d" type="Button" parent="Control/Letras"]
+[node name="D" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 416.0
@@ -152,7 +152,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="e" type="Button" parent="Control/Letras"]
+[node name="E" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 376.0
@@ -165,7 +165,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="f" type="Button" parent="Control/Letras"]
+[node name="F" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 496.0
@@ -178,7 +178,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="g" type="Button" parent="Control/Letras"]
+[node name="G" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 576.0
@@ -191,7 +191,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="h" type="Button" parent="Control/Letras"]
+[node name="H" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 656.0
@@ -204,7 +204,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="i" type="Button" parent="Control/Letras"]
+[node name="I" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 776.0
@@ -217,7 +217,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="j" type="Button" parent="Control/Letras"]
+[node name="J" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 736.0
@@ -230,7 +230,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="l" type="Button" parent="Control/Letras"]
+[node name="L" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 896.0
@@ -243,7 +243,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="m" type="Button" parent="Control/Letras"]
+[node name="M" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 816.0
@@ -256,7 +256,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="n" type="Button" parent="Control/Letras"]
+[node name="N" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 736.0
@@ -269,7 +269,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="o" type="Button" parent="Control/Letras"]
+[node name="O" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 856.0
@@ -282,7 +282,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="p" type="Button" parent="Control/Letras"]
+[node name="P" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 935.0
@@ -295,7 +295,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="q" type="Button" parent="Control/Letras"]
+[node name="Q" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 216.0
@@ -308,7 +308,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="r" type="Button" parent="Control/Letras"]
+[node name="R" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 456.0
@@ -321,7 +321,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="s" type="Button" parent="Control/Letras"]
+[node name="S" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 336.0
@@ -334,7 +334,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="t" type="Button" parent="Control/Letras"]
+[node name="T" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 536.0
@@ -347,7 +347,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="u" type="Button" parent="Control/Letras"]
+[node name="U" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 696.0
@@ -360,7 +360,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="v" type="Button" parent="Control/Letras"]
+[node name="V" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 576.0
@@ -373,7 +373,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="godot" type="Button" parent="Control/Letras"]
+[node name="K" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 816.0
@@ -386,7 +386,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="godot4" type="Button" parent="Control/Letras"]
+[node name="W" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 296.0
@@ -399,7 +399,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="godot5" type="Button" parent="Control/Letras"]
+[node name="Y" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 616.0
@@ -412,7 +412,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="godot2" type="Button" parent="Control/Letras"]
+[node name="Z" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 336.0
@@ -425,7 +425,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="godot3" type="Button" parent="Control/Letras"]
+[node name="X" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = 416.0
