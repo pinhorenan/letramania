@@ -10,7 +10,7 @@ var vidas_iniciais: int:
 		# Garante que o valor sempre fique entre 1 e 99
 		value = clampi(value, 1, 99)
 		Configuracoes.config.vidas = value
-		Configuracoes.salvar_configuracoes()
+		Configuracoes.salvar_todas_configuracoes()
 		label.text = str(value)
 	get:
 		return Configuracoes.config.vidas
@@ -34,7 +34,7 @@ func _ready():
 
 # Função para atualizar o label com a quantidade de vidas
 func atualizar_vidas():
-	Configuracoes.salvar_configuracoes()
+	Configuracoes.salvar_todas_configuracoes()
 	label.text = str(vidas_iniciais)  # Atualiza o texto do Label
 
 # Função chamada quando o botão de aumentar é pressionado

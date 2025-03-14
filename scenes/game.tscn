@@ -1,13 +1,13 @@
-[gd_scene load_steps=38 format=3 uid="uid://khsg2ndeh4xi"]
+[gd_scene load_steps=36 format=3 uid="uid://khsg2ndeh4xi"]
 
 [ext_resource type="Texture2D" uid="uid://bm2k102hr7l15" path="res://recursos/background.png" id="1_itbuk"]
 [ext_resource type="Script" path="res://scripts/game/ocupado.gd" id="2_0v8sj"]
 [ext_resource type="Script" path="res://scripts/game/area_colisao.gd" id="2_65ee8"]
-[ext_resource type="Script" path="res://scenes/botoesGame.gd" id="2_75y6d"]
+[ext_resource type="Script" path="res://scripts/game/botoesGame.gd" id="2_75y6d"]
 [ext_resource type="Script" path="res://scripts/game/arrastar.gd" id="3_s6wji"]
 [ext_resource type="Texture2D" uid="uid://c5qjutpc0vobl" path="res://recursos/letras/a.png" id="4_75olx"]
 [ext_resource type="Texture2D" uid="uid://dwksg8fcc1hcb" path="res://recursos/letras/b.png" id="6_f7p2w"]
-[ext_resource type="Script" path="res://scenes/gaps.gd" id="6_sg7ji"]
+[ext_resource type="Script" path="res://scripts/game/gaps.gd" id="6_sg7ji"]
 [ext_resource type="Texture2D" uid="uid://cu8wnnoduap2l" path="res://recursos/letras/c.png" id="7_uss7y"]
 [ext_resource type="Texture2D" uid="uid://b56n6qyo6l51j" path="res://recursos/letras/d.png" id="8_f36fc"]
 [ext_resource type="Texture2D" uid="uid://dxrnorqouoanp" path="res://recursos/letras/e.png" id="9_isedl"]
@@ -34,9 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://dn7vqbbk0d2oq" path="res://recursos/letras/y.png" id="29_t5wpc"]
 [ext_resource type="Texture2D" uid="uid://bpv34u1p0j71l" path="res://recursos/letras/z.png" id="30_631hs"]
 [ext_resource type="Texture2D" uid="uid://wblgq314faxd" path="res://recursos/letras/x.png" id="31_fwf74"]
-[ext_resource type="Script" path="res://scenes/botao_musica.gd" id="34_0w6ho"]
-[ext_resource type="Texture2D" uid="uid://m1f6g7kwbrd8" path="res://recursos/game/home-icon-silhouette.png" id="35_wgh6y"]
-[ext_resource type="Texture2D" uid="uid://bd33ww63juel" path="res://recursos/game/notification.png" id="36_2nop7"]
+[ext_resource type="Script" path="res://scripts/global/botao_musica.gd" id="34_0w6ho"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -103,9 +101,9 @@ offset_bottom = 40.0
 [node name="A" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 256.0
+offset_left = 215.0
 offset_top = 450.0
-offset_right = 331.0
+offset_right = 290.0
 offset_bottom = 525.0
 focus_mode = 0
 icon = ExtResource("4_75olx")
@@ -116,9 +114,9 @@ script = ExtResource("3_s6wji")
 [node name="B" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 656.0
+offset_left = 615.0
 offset_top = 530.0
-offset_right = 731.0
+offset_right = 690.0
 offset_bottom = 605.0
 focus_mode = 0
 icon = ExtResource("6_f7p2w")
@@ -129,9 +127,9 @@ script = ExtResource("3_s6wji")
 [node name="C" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 496.0
+offset_left = 455.0
 offset_top = 530.0
-offset_right = 571.0
+offset_right = 530.0
 offset_bottom = 605.0
 focus_mode = 0
 icon = ExtResource("7_uss7y")
@@ -142,9 +140,9 @@ script = ExtResource("3_s6wji")
 [node name="D" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 416.0
+offset_left = 375.0
 offset_top = 450.0
-offset_right = 491.0
+offset_right = 450.0
 offset_bottom = 525.0
 focus_mode = 0
 icon = ExtResource("8_f36fc")
@@ -155,9 +153,9 @@ script = ExtResource("3_s6wji")
 [node name="E" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 376.0
+offset_left = 335.0
 offset_top = 370.0
-offset_right = 451.0
+offset_right = 410.0
 offset_bottom = 445.0
 focus_mode = 0
 icon = ExtResource("9_isedl")
@@ -168,9 +166,9 @@ script = ExtResource("3_s6wji")
 [node name="F" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 496.0
+offset_left = 455.0
 offset_top = 450.0
-offset_right = 571.0
+offset_right = 530.0
 offset_bottom = 525.0
 focus_mode = 0
 icon = ExtResource("10_obdsf")
@@ -181,9 +179,9 @@ script = ExtResource("3_s6wji")
 [node name="G" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 576.0
+offset_left = 535.0
 offset_top = 450.0
-offset_right = 651.0
+offset_right = 610.0
 offset_bottom = 525.0
 focus_mode = 0
 icon = ExtResource("11_m2kqo")
@@ -194,9 +192,9 @@ script = ExtResource("3_s6wji")
 [node name="H" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 656.0
+offset_left = 615.0
 offset_top = 450.0
-offset_right = 731.0
+offset_right = 690.0
 offset_bottom = 525.0
 focus_mode = 0
 icon = ExtResource("12_p8qqq")
@@ -207,9 +205,9 @@ script = ExtResource("3_s6wji")
 [node name="I" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 776.0
+offset_left = 735.0
 offset_top = 370.0
-offset_right = 851.0
+offset_right = 810.0
 offset_bottom = 445.0
 focus_mode = 0
 icon = ExtResource("13_62enl")
@@ -220,9 +218,9 @@ script = ExtResource("3_s6wji")
 [node name="J" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 736.0
+offset_left = 695.0
 offset_top = 450.0
-offset_right = 811.0
+offset_right = 770.0
 offset_bottom = 525.0
 focus_mode = 0
 icon = ExtResource("14_ferq6")
@@ -233,9 +231,9 @@ script = ExtResource("3_s6wji")
 [node name="L" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 896.0
+offset_left = 855.0
 offset_top = 450.0
-offset_right = 971.0
+offset_right = 930.0
 offset_bottom = 525.0
 focus_mode = 0
 icon = ExtResource("15_e86ls")
@@ -246,9 +244,9 @@ script = ExtResource("3_s6wji")
 [node name="M" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 816.0
+offset_left = 775.0
 offset_top = 530.0
-offset_right = 891.0
+offset_right = 850.0
 offset_bottom = 605.0
 focus_mode = 0
 icon = ExtResource("16_vnwhf")
@@ -259,9 +257,9 @@ script = ExtResource("3_s6wji")
 [node name="N" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 736.0
+offset_left = 695.0
 offset_top = 530.0
-offset_right = 811.0
+offset_right = 770.0
 offset_bottom = 605.0
 focus_mode = 0
 icon = ExtResource("17_i0iox")
@@ -272,9 +270,9 @@ script = ExtResource("3_s6wji")
 [node name="O" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 856.0
+offset_left = 815.0
 offset_top = 370.0
-offset_right = 931.0
+offset_right = 890.0
 offset_bottom = 445.0
 focus_mode = 0
 icon = ExtResource("18_qv8pp")
@@ -285,9 +283,9 @@ script = ExtResource("3_s6wji")
 [node name="P" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 935.0
+offset_left = 895.0
 offset_top = 370.0
-offset_right = 1010.0
+offset_right = 970.0
 offset_bottom = 445.0
 focus_mode = 0
 icon = ExtResource("19_yhylh")
@@ -298,9 +296,9 @@ script = ExtResource("3_s6wji")
 [node name="Q" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 216.0
+offset_left = 175.0
 offset_top = 370.0
-offset_right = 291.0
+offset_right = 250.0
 offset_bottom = 445.0
 focus_mode = 0
 icon = ExtResource("20_nru7l")
@@ -311,9 +309,9 @@ script = ExtResource("3_s6wji")
 [node name="R" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 456.0
+offset_left = 415.0
 offset_top = 370.0
-offset_right = 531.0
+offset_right = 490.0
 offset_bottom = 445.0
 focus_mode = 0
 icon = ExtResource("21_8cf0q")
@@ -324,9 +322,9 @@ script = ExtResource("3_s6wji")
 [node name="S" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 336.0
+offset_left = 295.0
 offset_top = 450.0
-offset_right = 411.0
+offset_right = 370.0
 offset_bottom = 525.0
 focus_mode = 0
 icon = ExtResource("22_yex56")
@@ -337,9 +335,9 @@ script = ExtResource("3_s6wji")
 [node name="T" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 536.0
+offset_left = 495.0
 offset_top = 370.0
-offset_right = 611.0
+offset_right = 570.0
 offset_bottom = 445.0
 focus_mode = 0
 icon = ExtResource("23_fud1g")
@@ -350,9 +348,9 @@ script = ExtResource("3_s6wji")
 [node name="U" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 696.0
+offset_left = 655.0
 offset_top = 370.0
-offset_right = 771.0
+offset_right = 730.0
 offset_bottom = 445.0
 focus_mode = 0
 icon = ExtResource("24_avysu")
@@ -363,9 +361,9 @@ script = ExtResource("3_s6wji")
 [node name="V" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 576.0
+offset_left = 535.0
 offset_top = 530.0
-offset_right = 651.0
+offset_right = 610.0
 offset_bottom = 605.0
 focus_mode = 0
 icon = ExtResource("25_mq4gg")
@@ -376,9 +374,9 @@ script = ExtResource("3_s6wji")
 [node name="K" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 816.0
+offset_left = 775.0
 offset_top = 450.0
-offset_right = 891.0
+offset_right = 850.0
 offset_bottom = 525.0
 focus_mode = 0
 icon = ExtResource("27_toop0")
@@ -389,9 +387,9 @@ script = ExtResource("3_s6wji")
 [node name="W" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 296.0
+offset_left = 255.0
 offset_top = 370.0
-offset_right = 371.0
+offset_right = 330.0
 offset_bottom = 445.0
 focus_mode = 0
 icon = ExtResource("28_k5ttn")
@@ -402,9 +400,9 @@ script = ExtResource("3_s6wji")
 [node name="Y" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 616.0
+offset_left = 575.0
 offset_top = 370.0
-offset_right = 691.0
+offset_right = 650.0
 offset_bottom = 445.0
 focus_mode = 0
 icon = ExtResource("29_t5wpc")
@@ -415,9 +413,9 @@ script = ExtResource("3_s6wji")
 [node name="Z" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 336.0
+offset_left = 295.0
 offset_top = 530.0
-offset_right = 411.0
+offset_right = 370.0
 offset_bottom = 605.0
 focus_mode = 0
 icon = ExtResource("30_631hs")
@@ -428,9 +426,9 @@ script = ExtResource("3_s6wji")
 [node name="X" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 416.0
+offset_left = 375.0
 offset_top = 530.0
-offset_right = 491.0
+offset_right = 450.0
 offset_bottom = 605.0
 focus_mode = 0
 icon = ExtResource("31_fwf74")
@@ -438,17 +436,36 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="Node2D" type="Node2D" parent="Control"]
+[node name="Simbolos" type="Node2D" parent="Control"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/Node2D"]
-position = Vector2(115, 137)
-scale = Vector2(0.16, 0.16)
-texture = ExtResource("35_wgh6y")
+[node name="Timer" type="Timer" parent="Control"]
+autostart = true
 
-[node name="Sprite2D2" type="Sprite2D" parent="Control/Node2D"]
-position = Vector2(115, 257)
-scale = Vector2(0.16, 0.16)
-texture = ExtResource("36_2nop7")
+[node name="Tempo" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1025.0
+offset_top = 70.0
+offset_right = 1125.0
+offset_bottom = 145.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pontuação" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 535.0
+offset_right = 635.0
+offset_bottom = 75.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vidas" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 975.0
+offset_right = 1075.0
+offset_bottom = 75.0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Control/MusgaOnOff" to="Control" method="_on_musga_on_off_pressed"]
 [connection signal="pressed" from="Control/MusgaOnOff" to="Control/MusgaOnOff" method="_on_pressed"]
+[connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]

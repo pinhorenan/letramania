@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cikvdk570qy0t" path="res://recursos/menu/Botões/SairPressed.png" id="7_epbvh"]
 [ext_resource type="Texture2D" uid="uid://b2716ysh5gmot" path="res://recursos/menu/Botões/SairHighlight.png" id="8_6l7ad"]
 [ext_resource type="Texture2D" uid="uid://dtusgt8y1h4fi" path="res://recursos/menu/Botões/VolumeLigado.png" id="10_w364o"]
-[ext_resource type="Script" path="res://scenes/botao_musica.gd" id="11_e6i2m"]
+[ext_resource type="Script" path="res://scripts/global/botao_musica.gd" id="11_e6i2m"]
 [ext_resource type="Texture2D" uid="uid://dyc66xpyc3fm0" path="res://recursos/menu/Botões/VolumeDesligado.png" id="11_njevh"]
 [ext_resource type="Texture2D" uid="uid://nqbcjwwt8lf6" path="res://recursos/menu/Botões/Configuração.png" id="13_m2x8x"]
 [ext_resource type="Texture2D" uid="uid://c81ntatbx84im" path="res://recursos/letras/f.png" id="14_t4tlp"]
