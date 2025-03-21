@@ -1,5 +1,6 @@
 extends Control
 
+@onready var background = $Background
 @export var bus_name: String = "Musica"
 var musica: int
 @onready var label_tempo = $Tempo
@@ -11,6 +12,7 @@ var vidas: int = 3
 var pontuacao: int = 0
 
 func _ready() -> void:
+	ajustar_background()
 	label_pontuacao.visible = Configuracoes.config.pontuacao_ativada
 	label_tempo.visible = Configuracoes.config.temporizador_ativado
 	vidas = Configuracoes.config.vidas  # Valor inicial
@@ -39,6 +41,11 @@ func _process(delta):
 		tempo_decorrido += delta
 		atualizar_ui_tempo()
 
+func ajustar_background():
+	if background and background.texture:
+		background.size = get_viewport_rect().size
+		background.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+		background.z_index = -1
 # ----------------------------- Labels
 
 func iniciar_temporizador():

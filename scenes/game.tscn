@@ -1,13 +1,13 @@
 [gd_scene load_steps=36 format=3 uid="uid://khsg2ndeh4xi"]
 
 [ext_resource type="Texture2D" uid="uid://bm2k102hr7l15" path="res://recursos/background.png" id="1_itbuk"]
-[ext_resource type="Script" path="res://scripts/game/ocupado.gd" id="2_0v8sj"]
-[ext_resource type="Script" path="res://scripts/game/area_colisao.gd" id="2_65ee8"]
-[ext_resource type="Script" path="res://scripts/game/botoesGame.gd" id="2_75y6d"]
-[ext_resource type="Script" path="res://scripts/game/arrastar.gd" id="3_s6wji"]
+[ext_resource type="Script" uid="uid://dbe0sxw4gurj2" path="res://scripts/game/ocupado.gd" id="2_0v8sj"]
+[ext_resource type="Script" uid="uid://dymwyinhnvnoy" path="res://scripts/game/area_colisao.gd" id="2_65ee8"]
+[ext_resource type="Script" uid="uid://dgqjnibp70508" path="res://scripts/game/botoesGame.gd" id="2_75y6d"]
+[ext_resource type="Script" uid="uid://bbs6c0p3xusfd" path="res://scripts/game/arrastar.gd" id="3_s6wji"]
 [ext_resource type="Texture2D" uid="uid://c5qjutpc0vobl" path="res://recursos/letras/a.png" id="4_75olx"]
 [ext_resource type="Texture2D" uid="uid://dwksg8fcc1hcb" path="res://recursos/letras/b.png" id="6_f7p2w"]
-[ext_resource type="Script" path="res://scripts/game/gaps.gd" id="6_sg7ji"]
+[ext_resource type="Script" uid="uid://d1i4rpl6mk0ig" path="res://scripts/game/gaps.gd" id="6_sg7ji"]
 [ext_resource type="Texture2D" uid="uid://cu8wnnoduap2l" path="res://recursos/letras/c.png" id="7_uss7y"]
 [ext_resource type="Texture2D" uid="uid://b56n6qyo6l51j" path="res://recursos/letras/d.png" id="8_f36fc"]
 [ext_resource type="Texture2D" uid="uid://dxrnorqouoanp" path="res://recursos/letras/e.png" id="9_isedl"]
@@ -34,18 +34,9 @@
 [ext_resource type="Texture2D" uid="uid://dn7vqbbk0d2oq" path="res://recursos/letras/y.png" id="29_t5wpc"]
 [ext_resource type="Texture2D" uid="uid://bpv34u1p0j71l" path="res://recursos/letras/z.png" id="30_631hs"]
 [ext_resource type="Texture2D" uid="uid://wblgq314faxd" path="res://recursos/letras/x.png" id="31_fwf74"]
-[ext_resource type="Script" path="res://scripts/global/botao_musica.gd" id="34_0w6ho"]
+[ext_resource type="Script" uid="uid://c16aya8f236vp" path="res://scripts/global/botao_musica.gd" id="34_0w6ho"]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="Background" type="TextureRect" parent="."]
-offset_left = -68.0
-offset_top = -21.0
-offset_right = 1233.0
-offset_bottom = 711.0
-texture = ExtResource("1_itbuk")
-expand_mode = 1
-stretch_mode = 4
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -53,6 +44,16 @@ anchors_preset = 0
 offset_right = 5.0
 offset_bottom = 5.0
 script = ExtResource("2_75y6d")
+
+[node name="Background" type="TextureRect" parent="Control"]
+z_index = -2
+layout_mode = 2
+offset_right = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_itbuk")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="MusgaOnOff" type="TextureButton" parent="Control"]
 custom_minimum_size = Vector2(70, 70)
@@ -94,9 +95,13 @@ script = ExtResource("2_0v8sj")
 script = ExtResource("2_65ee8")
 
 [node name="Letras" type="Control" parent="Control"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="A" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)

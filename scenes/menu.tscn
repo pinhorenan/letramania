@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://b4pw1nhcnhfnr"]
 
 [ext_resource type="Texture2D" uid="uid://bm2k102hr7l15" path="res://recursos/background.png" id="1_04q62"]
-[ext_resource type="Script" path="res://scripts/menu/botoesMenu.gd" id="1_qvqax"]
+[ext_resource type="Script" uid="uid://cgy4mskjc7kxy" path="res://scripts/menu/botoesMenu.gd" id="1_qvqax"]
 [ext_resource type="Texture2D" uid="uid://43koqftg6bdf" path="res://recursos/menu/Botões/IniciarBase.png" id="3_w46fu"]
 [ext_resource type="Texture2D" uid="uid://osti8074u6kb" path="res://recursos/menu/Botões/IniciarPressed.png" id="4_hsc1j"]
 [ext_resource type="Texture2D" uid="uid://r814d3g8xu4d" path="res://recursos/menu/Botões/IniciarHighlight.png" id="5_hm2o2"]
@@ -9,11 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://cikvdk570qy0t" path="res://recursos/menu/Botões/SairPressed.png" id="7_epbvh"]
 [ext_resource type="Texture2D" uid="uid://b2716ysh5gmot" path="res://recursos/menu/Botões/SairHighlight.png" id="8_6l7ad"]
 [ext_resource type="Texture2D" uid="uid://dtusgt8y1h4fi" path="res://recursos/menu/Botões/VolumeLigado.png" id="10_w364o"]
-[ext_resource type="Script" path="res://scripts/global/botao_musica.gd" id="11_e6i2m"]
+[ext_resource type="Script" uid="uid://c16aya8f236vp" path="res://scripts/global/botao_musica.gd" id="11_e6i2m"]
 [ext_resource type="Texture2D" uid="uid://dyc66xpyc3fm0" path="res://recursos/menu/Botões/VolumeDesligado.png" id="11_njevh"]
 [ext_resource type="Texture2D" uid="uid://nqbcjwwt8lf6" path="res://recursos/menu/Botões/Configuração.png" id="13_m2x8x"]
 [ext_resource type="Texture2D" uid="uid://c81ntatbx84im" path="res://recursos/letras/f.png" id="14_t4tlp"]
-[ext_resource type="Script" path="res://scripts/menu/girando.gd" id="15_0vx88"]
+[ext_resource type="Script" uid="uid://csky1bv8v7byq" path="res://scripts/menu/girando.gd" id="15_0vx88"]
 [ext_resource type="Texture2D" uid="uid://bvrcbvavjobie" path="res://recursos/letras/o.png" id="16_str0a"]
 [ext_resource type="Texture2D" uid="uid://dadwlsm5lbuyn" path="res://recursos/letras/r.png" id="17_p1gw0"]
 [ext_resource type="Texture2D" uid="uid://cxn7bo4qgwsn4" path="res://recursos/letras/m.png" id="18_d7kp2"]
@@ -32,18 +32,28 @@ grow_vertical = 2
 script = ExtResource("1_qvqax")
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = -68.0
-offset_top = -21.0
-offset_right = 1233.0
-offset_bottom = 711.0
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_04q62")
 expand_mode = 1
 
 [node name="Botoes" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Iniciar" type="TextureButton" parent="Botoes"]
 custom_minimum_size = Vector2(400, 120)
@@ -53,10 +63,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 356.0
-offset_top = 300.0
-offset_right = 756.0
-offset_bottom = 420.0
+offset_left = -206.0
+offset_top = -314.0
+offset_right = 194.0
+offset_bottom = -194.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("3_w46fu")
@@ -73,10 +83,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 356.0
-offset_top = 470.0
-offset_right = 756.0
-offset_bottom = 590.0
+offset_left = -206.0
+offset_top = -144.0
+offset_right = 194.0
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("6_phrpi")
@@ -91,10 +101,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = 518.0
-offset_right = 100.0
-offset_bottom = 588.0
+offset_left = -532.0
+offset_top = -96.0
+offset_right = -462.0
+offset_bottom = -26.0
 grow_vertical = 0
 focus_mode = 0
 action_mode = 0
@@ -114,10 +124,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1012.0
-offset_top = 518.0
-offset_right = 1082.0
-offset_bottom = 588.0
+offset_left = 450.0
+offset_top = -96.0
+offset_right = 520.0
+offset_bottom = -26.0
 grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 0
@@ -129,73 +139,74 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Titulo" type="Node2D" parent="."]
+position = Vector2(564, 134)
 script = ExtResource("15_0vx88")
 
 [node name="F" type="Sprite2D" parent="Titulo"]
-position = Vector2(320, 100)
+position = Vector2(-231, -41.6284)
 rotation = -0.0174533
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("14_t4tlp")
 
 [node name="O" type="Sprite2D" parent="Titulo"]
-position = Vector2(440, 100)
+position = Vector2(-111, -41.6284)
 rotation = 0.0261799
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("16_str0a")
 
 [node name="R" type="Sprite2D" parent="Titulo"]
-position = Vector2(560, 100)
+position = Vector2(9, -41.6284)
 rotation = -0.0349066
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("17_p1gw0")
 
 [node name="M" type="Sprite2D" parent="Titulo"]
-position = Vector2(680, 100)
+position = Vector2(129, -41.6284)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("18_d7kp2")
 
 [node name="A" type="Sprite2D" parent="Titulo"]
-position = Vector2(800, 100)
+position = Vector2(249, -41.6284)
 rotation = 0.0349066
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("19_gpfhg")
 
 [node name="A2" type="Sprite2D" parent="Titulo"]
-position = Vector2(320, 200)
+position = Vector2(-231, 58.3716)
 rotation = 0.0261799
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("19_gpfhg")
 
 [node name="P" type="Sprite2D" parent="Titulo"]
-position = Vector2(200, 200)
+position = Vector2(-351, 58.3716)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("20_213ko")
 
 [node name="L" type="Sprite2D" parent="Titulo"]
-position = Vector2(440, 200)
+position = Vector2(-111, 58.3716)
 rotation = -0.0174533
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("21_xdyxl")
 
 [node name="A3" type="Sprite2D" parent="Titulo"]
-position = Vector2(560, 200)
+position = Vector2(9.00006, 58.3716)
 rotation = 0.0261799
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("19_gpfhg")
 
 [node name="V" type="Sprite2D" parent="Titulo"]
-position = Vector2(680, 200)
+position = Vector2(129, 58.3716)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("22_xuaro")
 
 [node name="R2" type="Sprite2D" parent="Titulo"]
-position = Vector2(800, 200)
+position = Vector2(249, 58.3716)
 rotation = -0.0261799
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("17_p1gw0")
 
 [node name="A4" type="Sprite2D" parent="Titulo"]
-position = Vector2(920, 200)
+position = Vector2(369, 58.3716)
 rotation = 0.0174533
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("19_gpfhg")
