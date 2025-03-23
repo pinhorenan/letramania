@@ -3,6 +3,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Jogo.time_end = Jogo.get_time()
+	Jogo.calcular_media()
+	Jogo.salvar_dados_no_csv()
 	pass # Replace with function body.
 
 

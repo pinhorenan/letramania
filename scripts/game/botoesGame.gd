@@ -13,6 +13,7 @@ var pontuacao: int = 0
 
 func _ready() -> void:
 	ajustar_background()
+	Jogo.time_start = Jogo.get_time()
 	label_pontuacao.visible = Configuracoes.config.pontuacao_ativada
 	label_tempo.visible = Configuracoes.config.temporizador_ativado
 	vidas = Configuracoes.config.vidas  # Valor inicial
