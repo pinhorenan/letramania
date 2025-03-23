@@ -23,3 +23,7 @@ func _on_musga_on_off_pressed() -> void:
 func _on_iniciar_pressed() -> void:
 	Jogo.word_size += 1
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
+
+
+func _on_configuraçoes_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/config.tscn")
