@@ -77,7 +77,7 @@ func _on_musga_on_off_pressed() -> void:
 	var is_muted = AudioServer.is_bus_mute(musica)
 	AudioServer.set_bus_mute(musica, not is_muted)
 
-# ----------------------------- Arrastável
+# ----------------------------- Arrastável	
 
 func check_snap_area():
 	for area in get_tree().get_nodes_in_group("arrastaveis"):

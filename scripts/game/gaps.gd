@@ -55,8 +55,20 @@ func set_gaps(array_size: int) -> void:
 			selected_words[i].append([draggable, word_str[n]])
 			add_child(draggable)
 			draggable.position = Vector2(x + (n * 80), y_positions[i])
-		
-		print("Palavra ", i + 1, ": ", word_str, " | Imagem: ", word_data["image"])
+
+func verify_gaps() ->bool:
+	var completed = true
+	for w in selected_words:
+		for l in w:
+			print(l)
+			if not(l[0].is_occupied):
+				completed = false
+				break
+	return completed
 
 func _ready() -> void:
+	var completed = false
 	set_gaps(4)
+	#while not(completed):
+	#	completed = verify_gaps()
+	#set_gaps(4)

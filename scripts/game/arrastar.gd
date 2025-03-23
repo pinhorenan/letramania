@@ -6,9 +6,10 @@ var original_position := Vector2()
 var current_snap_area: Node = null
 var current_snap_area_letter
 var is_snapped := false  # Indica se a letra está encaixada
+var letter_name
 
 func _ready():
-	original_position = position
+	pass
 
 func _gui_input(event: InputEvent) -> void:
 	#<<<<<<< HEAD
@@ -24,7 +25,7 @@ func _gui_input(event: InputEvent) -> void:
 			offset = get_local_mouse_position()
 		else:  # Botão solto
 			is_dragging = false
-			if current_snap_area and not current_snap_area.is_occupied and current_snap_area_letter == self.name:
+			if current_snap_area and not current_snap_area.is_occupied and current_snap_area_letter == letter_name:
 				# Cria um novo botão para preencher a área
 				var new_button = duplicate()
 				
