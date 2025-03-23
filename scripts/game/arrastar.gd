@@ -7,6 +7,8 @@ var current_snap_area: Node = null
 var current_snap_area_letter
 var is_snapped := false  # Indica se a letra está encaixada
 var letter_name
+var completed = false
+@onready var lacunas = get_node("/root/Node2D/Control/Lacunas")
 
 func _ready():
 	pass
@@ -35,7 +37,10 @@ func _gui_input(event: InputEvent) -> void:
 				new_button.position = current_snap_area.global_position - get_parent().global_position
 				get_parent().add_child(new_button)
 				is_snapped = true
-				
+				queue_free() # remove a letra do "teclado". Isso está aqui para imitar o jogo físico que serviu de inspiração, mas pode ser removido futuramente
+				completed = lacunas.verify_gaps()
+				if completed:
+					get_tree().change_scene_to_file("res://scenes/parabenizacao.tscn")
 			position = original_position # move o botão para a posição de origem
 			accept_event()
 	
@@ -44,8 +49,7 @@ func _gui_input(event: InputEvent) -> void:
 		check_snap_area()
 		accept_event()
 
-func check_snap_area():
-	var lacunas = get_node("/root/Node2D/Control/Lacunas") 
+func check_snap_area(): 
 	for word in lacunas.selected_words: # Cada palavra
 		for letter in word: 
 			if not letter[0].is_occupied:

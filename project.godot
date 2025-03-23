@@ -23,7 +23,7 @@ buses/default_bus_layout="res://scripts/global/default_bus_layout.tres"
 
 Musica="*res://scenes/Musica.tscn"
 Configuracoes="*res://scripts/global/configsGlobal.gd"
-Jogo="res://scripts/global/gameGlobal.gd"
+Jogo="*res://scripts/global/gameGlobal.gd"
 
 [display]
 

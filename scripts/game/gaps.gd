@@ -3,7 +3,7 @@ extends Control
 var selected_words = [[], [], []]
 var word_images = []  # Armazenará as imagens das palavras
 
-var words = [
+var fourl_words = [
 	{"image": "res://recursos/vetores/casa.png", "word": "CASA"},
 	{"image": "res://recursos/vetores/sino.png", "word": "SINO"},
 	{"image": "res://recursos/vetores/cama.png", "word": "CAMA"},
@@ -16,10 +16,46 @@ var words = [
 	{"image": "res://recursos/vetores/pipa.png", "word": "PIPA"},
 ] # 10 palavras com imagens
 
+var fivel_words = [
+	{"image": "", "word": "APITO"},
+	{"image": "", "word": "PENTE"},
+	{"image": "", "word": "LIVRO"},
+	{"image": "", "word": "LAPIS"},
+	{"image": "", "word": "JARRA"},
+	{"image": "", "word": "PIANO"},
+	{"image": "", "word": "PORTA"},
+	{"image": "", "word": "CHAVE"},
+	{"image": "", "word": "PEDRA"},
+	{"image": "", "word": "COBRA"},
+	{"image": "", "word": "ZEBRA"},
+]
+
+var sixl_words = [
+	{"image": "", "word": "COLHER"},
+	{"image": "", "word": "SAPATO"},
+	{"image": "", "word": "BONECA"},
+	{"image": "", "word": "TIJOLO"},
+	{"image": "", "word": "PANELA"},
+	{"image": "", "word": "ABAJUR"},
+	{"image": "", "word": "GIRAFA"},
+	{"image": "", "word": "CAVALO"},
+	{"image": "", "word": "MACACO"},
+	{"image": "", "word": "BANANA"},
+	{"image": "", "word": "TOMATE"},
+]
+
 func set_gaps(array_size: int) -> void:
 	var x = 180
 	var y_positions = [60, 160, 260]  # Posições Y para cada linha
 	var image_offset = Vector2(-40, -50)  # Ajuste de posição da imagem
+	var words
+	
+	if array_size == 4:
+		words = fourl_words
+	elif array_size == 5:
+		words = fivel_words
+	else:
+		words = sixl_words
 	
 	# Limpa imagens anteriores
 	for img in word_images:
@@ -37,6 +73,7 @@ func set_gaps(array_size: int) -> void:
 	for i in 3:
 		var word_data = words[selected_indices[i]]
 		var word_str = word_data["word"]
+		print(words[selected_indices[i]])
 		
 		# Adiciona imagem da palavra
 		if word_data["image"] != "":
@@ -60,7 +97,6 @@ func verify_gaps() ->bool:
 	var completed = true
 	for w in selected_words:
 		for l in w:
-			print(l)
 			if not(l[0].is_occupied):
 				completed = false
 				break
@@ -68,7 +104,4 @@ func verify_gaps() ->bool:
 
 func _ready() -> void:
 	var completed = false
-	set_gaps(4)
-	#while not(completed):
-	#	completed = verify_gaps()
-	#set_gaps(4)
+	set_gaps(Jogo.word_size)

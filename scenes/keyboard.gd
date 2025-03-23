@@ -22,21 +22,17 @@ func spawn_keys(word_list) -> void:
 			letter_node.letter_name = letter_name
 			key_list.append(letter_node) # adicionando à lista de letras do teclado que será gerado futuramente
 	
-	while len(key_list) != 30:
+	while len(key_list) != 30: # NOTA: Do jeito que está, existe uma chance (bem pequena) de criar cenários estranhos onde, por exemplo, uma única letra se repetiria por todas as opções
 		idx = rng.randi_range(0, 25)
 		letter_name = alphabet[idx]
 		letter_node = get_node(letters_parent_path + letter_name).duplicate()
 		add_child(letter_node)
 		letter_node.letter_name = letter_name
 		key_list.append(letter_node) # adicionando letras aleatórias
-	
-	for l in key_list:
-		print(l)
+		
 	key_list.shuffle()
-	for l in key_list:
-		print(l)
 	
-	for l in key_list:
+	for l in key_list: # Posicionamento das letras disponíveis
 		if x == 975:
 			x = 175
 			y += 80
