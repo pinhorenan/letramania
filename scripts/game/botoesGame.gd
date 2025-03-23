@@ -6,7 +6,7 @@ var musica: int
 @onready var label_tempo = $Tempo
 @onready var label_pontuacao = $Pontuação
 @onready var label_vidas = $Vidas
-var tempo_decorrido: float = 0.0
+#var tempo_decorrido: float = 0.0
 var temporizador_ligado: bool = false
 var vidas: int = 3
 var pontuacao: int = 0
@@ -38,7 +38,7 @@ func _ready() -> void:
 
 func _process(delta):
 	if temporizador_ligado:
-		tempo_decorrido += delta
+		Jogo.tempo_decorrido += delta
 		atualizar_ui_tempo()
 
 func ajustar_background():
@@ -55,11 +55,11 @@ func parar_temporizador():
 	temporizador_ligado = false
 
 func resetar_temporizador():
-	tempo_decorrido = 0.0
+	Jogo.tempo_decorrido = 0.0
 
 func atualizar_ui_tempo():
-	var minutos = int(tempo_decorrido / 60)
-	var segundos = int(tempo_decorrido) % 60
+	var minutos = int(Jogo.tempo_decorrido / 60)
+	var segundos = int(Jogo.tempo_decorrido) % 60
 	label_tempo.text = "%02d:%02d" % [minutos, segundos]
 	
 func atualizar_ui_vidas():

@@ -40,7 +40,11 @@ func _gui_input(event: InputEvent) -> void:
 				queue_free() # remove a letra do "teclado". Isso está aqui para imitar o jogo físico que serviu de inspiração, mas pode ser removido futuramente
 				completed = lacunas.verify_gaps()
 				if completed:
-					get_tree().change_scene_to_file("res://scenes/parabenizacao.tscn")
+					get_parent().get_parent().parar_temporizador() # Sim. Se possível eu arrumo depois
+					if Jogo.word_size < 6:
+						get_tree().change_scene_to_file("res://scenes/prox_fase.tscn")
+					else:
+						get_tree().change_scene_to_file("res://scenes/fim.tscn")
 			position = original_position # move o botão para a posição de origem
 			accept_event()
 	
