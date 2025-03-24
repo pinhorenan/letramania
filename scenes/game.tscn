@@ -450,10 +450,9 @@ autostart = true
 
 [node name="Tempo" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 1025.0
-offset_top = 70.0
-offset_right = 1125.0
-offset_bottom = 145.0
+offset_left = 24.0
+offset_right = 124.0
+offset_bottom = 75.0
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -1,6 +1,6 @@
 extends Control
 
-var selected_words = [[], [], []]
+var selected_words = [[], [], [], []]
 var word_images = []  # Armazenará as imagens das palavras
 
 var fourl_words = [
@@ -45,8 +45,8 @@ var sixl_words = [
 ]
 
 func set_gaps(array_size: int) -> void:
-	var x = 180
-	var y_positions = [60, 160, 260]  # Posições Y para cada linha
+	var x = 110
+	var y_positions = [80, 180, 80, 180]  # Posições Y para cada linha
 	var image_offset = Vector2(-40, -50)  # Ajuste de posição da imagem
 	var words
 	
@@ -64,13 +64,21 @@ func set_gaps(array_size: int) -> void:
 	
 	# Seleção de palavras
 	var selected_indices = []
-	while selected_indices.size() < 3:
+	while selected_indices.size() < 4:
 		var idx = randi() % words.size()
 		if not selected_indices.has(idx):
 			selected_indices.append(idx)
 	
 	# Criação dos elementos
-	for i in 3:
+	for i in 4:
+		if i == 2:
+			match array_size:
+				4:
+					x += 700
+				5:
+					x += 620
+				_:
+					x += 540
 		var word_data = words[selected_indices[i]]
 		var word_str = word_data["word"]
 		print(words[selected_indices[i]])
