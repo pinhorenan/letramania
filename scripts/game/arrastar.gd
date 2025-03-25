@@ -11,10 +11,49 @@ var completed = false
 @onready var lacunas = get_node("/root/Node2D/Control/Lacunas")
 var last_release_time := 0  
 var idle_time := 0  
+var tip_timeout = 3000
+@onready var keyboard = get_node("/root/Node2D/Control/Letras")
+
+
+func is_idle():
+	if not completed:
+		var current_time = Time.get_ticks_msec()
+		var elapsed_time = current_time - Jogo.aux_time
+		if elapsed_time > 20000: # 20 segundos de inatividade para mostrar dica
+			game_tips()
+			Jogo.aux_time = current_time
+
+func game_tips():
+	var word_complete
+	for word in lacunas.selected_words:
+		word_complete = true 
+		for letter in word:
+			if not letter[0].is_occupied:
+				word_complete = false  
+				break 
+		if not word_complete:  
+			for letter in word:
+				if not letter[0].is_occupied:  
+					var original_color = letter[0].color
+					var end_time = Time.get_ticks_msec() + tip_timeout
+										
+					while Time.get_ticks_msec() < end_time:
+						letter[0].color = "green"
+						keyboard.tip_letter(letter[1], 1)
+						await get_tree().create_timer(0.5).timeout 
+						letter[0].color = original_color
+						keyboard.tip_letter(letter[1], 0)
+						await get_tree().create_timer(0.5).timeout 
+						
+					letter[0].color = original_color
+					return  
 
 func _ready():
 	Jogo.aux_time = Time.get_ticks_msec()
 	pass
+	
+func _process(delta: float) -> void:
+	is_idle()
 
 func _gui_input(event: InputEvent) -> void:
 	#<<<<<<< HEAD

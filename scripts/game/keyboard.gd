@@ -1,8 +1,9 @@
 extends Control
 
-var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q",
+var alphabet = ["A","B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q",
 "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] # Provavelmente há solução melhor mas vai ser isso por enquanto.
 var key_list = []
+var tip_timeout = 3000
 
 func spawn_keys(word_list) -> void:
 	var rng = RandomNumberGenerator.new();
@@ -21,7 +22,7 @@ func spawn_keys(word_list) -> void:
 			add_child(letter_node)
 			letter_node.letter_name = letter_name
 			key_list.append(letter_node) # adicionando à lista de letras do teclado que será gerado futuramente
-	
+
 	while len(key_list) != 30: # NOTA: Do jeito que está, existe uma chance (bem pequena) de criar cenários estranhos onde, por exemplo, uma única letra se repetiria por todas as opções
 		idx = rng.randi_range(0, 25)
 		letter_name = alphabet[idx]
@@ -29,6 +30,7 @@ func spawn_keys(word_list) -> void:
 		add_child(letter_node)
 		letter_node.letter_name = letter_name
 		key_list.append(letter_node) # adicionando letras aleatórias
+
 		
 	key_list.shuffle()
 	
@@ -47,7 +49,18 @@ func _ready() -> void:
 	var lacunas = get_node("/root/Node2D/Control/Lacunas")
 	spawn_keys(lacunas.selected_words)
 
-
+func tip_letter(letter, type):
+	for key in key_list:
+		if key && key.letter_name == letter:
+			var path = "res://recursos/letras/" + letter.to_lower() 
+			if type == 1:
+				var new_icon = load(path + "tip.png")  
+				key.icon = new_icon 
+			else:
+				var new_icon = load(path + ".png") 
+				key.icon = new_icon
+			break  
+			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

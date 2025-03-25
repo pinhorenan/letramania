@@ -1,11 +1,11 @@
-[gd_scene load_steps=37 format=3 uid="uid://khsg2ndeh4xi"]
+[gd_scene load_steps=38 format=3 uid="uid://khsg2ndeh4xi"]
 
 [ext_resource type="Texture2D" uid="uid://bm2k102hr7l15" path="res://recursos/background.png" id="1_itbuk"]
 [ext_resource type="Script" uid="uid://dbe0sxw4gurj2" path="res://scripts/game/ocupado.gd" id="2_0v8sj"]
 [ext_resource type="Script" uid="uid://dymwyinhnvnoy" path="res://scripts/game/area_colisao.gd" id="2_65ee8"]
 [ext_resource type="Script" uid="uid://dgqjnibp70508" path="res://scripts/game/botoesGame.gd" id="2_75y6d"]
 [ext_resource type="Script" uid="uid://bbs6c0p3xusfd" path="res://scripts/game/arrastar.gd" id="3_s6wji"]
-[ext_resource type="Texture2D" uid="uid://c5qjutpc0vobl" path="res://recursos/letras/a.png" id="4_75olx"]
+[ext_resource type="Texture2D" uid="uid://cm3guji35w0os" path="res://recursos/letras/atip.png" id="4_75olx"]
 [ext_resource type="Texture2D" uid="uid://dwksg8fcc1hcb" path="res://recursos/letras/b.png" id="6_f7p2w"]
 [ext_resource type="Script" uid="uid://d1i4rpl6mk0ig" path="res://scripts/game/gaps.gd" id="6_sg7ji"]
 [ext_resource type="Texture2D" uid="uid://cu8wnnoduap2l" path="res://recursos/letras/c.png" id="7_uss7y"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://bw4m4th0qoms2" path="res://scripts/game/keyboard.gd" id="9_sll30"]
 [ext_resource type="Texture2D" uid="uid://c81ntatbx84im" path="res://recursos/letras/f.png" id="10_obdsf"]
 [ext_resource type="Texture2D" uid="uid://cnh4rfa0y7nep" path="res://recursos/letras/g.png" id="11_m2kqo"]
+[ext_resource type="Texture2D" uid="uid://c5qjutpc0vobl" path="res://recursos/letras/a.png" id="12_02fa5"]
 [ext_resource type="Texture2D" uid="uid://dc1tx6niopean" path="res://recursos/letras/h.png" id="12_p8qqq"]
 [ext_resource type="Texture2D" uid="uid://bu6vn3gfx3xv6" path="res://recursos/letras/i.png" id="13_62enl"]
 [ext_resource type="Texture2D" uid="uid://by5yfq650btj4" path="res://recursos/letras/j.png" id="14_ferq6"]
@@ -106,6 +107,19 @@ grow_vertical = 0
 script = ExtResource("9_sll30")
 
 [node name="A" type="Button" parent="Control/Letras"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 0
+offset_left = -1018.0
+offset_top = 315.0
+offset_right = -943.0
+offset_bottom = 390.0
+focus_mode = 0
+icon = ExtResource("12_02fa5")
+flat = true
+expand_icon = true
+script = ExtResource("3_s6wji")
+
+[node name="ATip" type="Button" parent="Control/Letras"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
 offset_left = -1018.0
