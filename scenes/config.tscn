@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://klts52bc3exe"]
 
 [ext_resource type="Texture2D" uid="uid://bm2k102hr7l15" path="res://recursos/background.png" id="1_j6arj"]
-[ext_resource type="Script" uid="uid://dk8enqjdeb3r4" path="res://scripts/configs/botoesConfig.gd" id="1_w7iws"]
+[ext_resource type="Script" path="res://scripts/configs/botoesConfig.gd" id="1_w7iws"]
 [ext_resource type="Texture2D" uid="uid://c8pjofh8erje7" path="res://recursos/config/Tela_Config.png" id="2_3f8tf"]
 [ext_resource type="Texture2D" uid="uid://dpduir8dbxkk7" path="res://recursos/config/Voltar.png" id="3_sccdn"]
 [ext_resource type="Texture2D" uid="uid://dap2csy3ys3yk" path="res://recursos/config/BotaoOff.png" id="5_ayfbt"]
 [ext_resource type="Texture2D" uid="uid://rfeqigdscj1d" path="res://recursos/config/BotaoOn.png" id="6_jrev4"]
-[ext_resource type="Script" uid="uid://de5dpldi4eoft" path="res://scripts/configs/controleVida.gd" id="7_me3g6"]
+[ext_resource type="Script" path="res://scripts/configs/controleVida.gd" id="7_me3g6"]
 [ext_resource type="Texture2D" uid="uid://cp1vqk14mrjlb" path="res://recursos/config/BotaoQuantidade.png" id="8_evu5t"]
 
 [node name="Control" type="Control"]

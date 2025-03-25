@@ -54,9 +54,9 @@ func carregar_todas_configuracoes():
 		# Força tipos booleanos
 		config.pontuacao_ativada = bool(config.pontuacao_ativada)
 		config.temporizador_ativado = bool(config.temporizador_ativado)
-	else:
-		# Se não existe, cria com valores padrão
-		salvar_todas_configuracoes()
+		
+	# Se não existir, cria com valores padrão
+	salvar_todas_configuracoes()
 	
 	# Aplica configurações de áudio
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Musica"), not is_music_on)

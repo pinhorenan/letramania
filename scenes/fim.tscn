@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://dokdy6c7tqn63"]
 
-[ext_resource type="Script" uid="uid://bjpxhsmhtns5f" path="res://scripts/fim/voltar.gd" id="1_esfg5"]
+[ext_resource type="Script" path="res://scripts/fim/voltar.gd" id="1_esfg5"]
 [ext_resource type="Texture2D" uid="uid://bm2k102hr7l15" path="res://recursos/background.png" id="2_ge5dm"]
 [ext_resource type="Texture2D" uid="uid://b6e3qoh32hjq1" path="res://recursos/parabenizacao/Botões/InicioBase.png" id="3_g7lk3"]
 [ext_resource type="Texture2D" uid="uid://06vatbuhdfe0" path="res://recursos/parabenizacao/Botões/InicioPressed.png" id="4_mqyst"]
 [ext_resource type="Texture2D" uid="uid://blra51e4kmony" path="res://recursos/parabenizacao/Botões/InicioHighlight.png" id="5_pieu7"]
 [ext_resource type="Texture2D" uid="uid://dtusgt8y1h4fi" path="res://recursos/menu/Botões/VolumeLigado.png" id="6_21o2j"]
 [ext_resource type="Texture2D" uid="uid://dyc66xpyc3fm0" path="res://recursos/menu/Botões/VolumeDesligado.png" id="7_au22s"]
-[ext_resource type="Script" uid="uid://c16aya8f236vp" path="res://scripts/global/botao_musica.gd" id="8_xdbs7"]
+[ext_resource type="Script" path="res://scripts/global/botao_musica.gd" id="8_xdbs7"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
