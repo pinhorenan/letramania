@@ -54,11 +54,22 @@ func tip_letter(letter, type):
 		if key && key.letter_name == letter:
 			var path = "res://recursos/letras/" + letter.to_lower() 
 			if type == 1:
-				var new_icon = load(path + "tip.png")  
-				key.icon = new_icon 
+				var overlay = key.get_node_or_null("TipOverlay")
+				if not overlay:
+					overlay = TextureRect.new()
+					overlay.name = "TipOverlay"
+					overlay.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+					overlay.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+					overlay.size = key.size
+					key.add_child(overlay)
+				
+				var new_texture = load("res://recursos/letras/img_tip.png")
+				overlay.texture = new_texture
+				overlay.show()
 			else:
-				var new_icon = load(path + ".png") 
-				key.icon = new_icon
+				var overlay = key.get_node_or_null("TipOverlay")
+				if overlay:
+					overlay.hide()
 			break  
 			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
