@@ -26,26 +26,27 @@ func is_idle():
 func game_tips():
 	var word_complete
 	for word in lacunas.selected_words:
+		var letters = word["letters"]
 		word_complete = true 
-		for letter in word:
-			if not letter[0].is_occupied:
+		for current_letter in letters:
+			if not current_letter[0].is_occupied:
 				word_complete = false  
 				break 
 		if not word_complete:  
-			for letter in word:
-				if not letter[0].is_occupied:  
-					var original_color = letter[0].color
+			for current_letter in letters:
+				if not current_letter[0].is_occupied:  
+					var original_color = current_letter[0].color
 					var end_time = Time.get_ticks_msec() + tip_timeout
 										
 					while Time.get_ticks_msec() < end_time:
-						letter[0].color = "green"
-						keyboard.tip_letter(letter[1], 1)
+						current_letter[0].color = "green"
+						keyboard.tip_letter(current_letter[1], 1)
 						await get_tree().create_timer(0.5).timeout 
-						letter[0].color = original_color
-						keyboard.tip_letter(letter[1], 0)
+						current_letter[0].color = original_color
+						keyboard.tip_letter(current_letter[1], 0)
 						await get_tree().create_timer(0.5).timeout 
 						
-					letter[0].color = original_color
+					current_letter[0].color = original_color
 					return  
 
 func _ready():
@@ -56,6 +57,7 @@ func _process(delta: float) -> void:
 	is_idle()
 
 func _gui_input(event: InputEvent) -> void:
+	var root_node = get_parent().get_parent()
 	#<<<<<<< HEAD
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:  # Botão pressionado
@@ -83,10 +85,10 @@ func _gui_input(event: InputEvent) -> void:
 				get_parent().add_child(new_button)
 				is_snapped = true
 				Jogo.add_acertos()
-				queue_free() # remove a letra do "teclado". Isso está aqui para imitar o jogo físico que serviu de inspiração, mas pode ser removido futuramente
+				queue_free() # remove a letra do "teclado". "
 				completed = lacunas.verify_gaps()
 				if completed:
-					get_parent().get_parent().parar_temporizador() # Sim. Se possível eu arrumo depois
+					root_node.parar_temporizador() # Sim. Se possível eu arrumo depois
 					if Jogo.word_size < 6:
 						idle_time = Time.get_ticks_msec() - Jogo.aux_time  
 						Jogo.add_idle_time(idle_time)
@@ -102,19 +104,31 @@ func _gui_input(event: InputEvent) -> void:
 							Jogo.set_inatividade_fase3()
 						get_tree().change_scene_to_file("res://scenes/fim.tscn")
 			else:
+				for word in lacunas.selected_words:
+					for letters in word["letters"]:
+						if letters[0].get_global_rect().has_point(get_global_mouse_position()): # Verificar a letra atual, para saber qual a palavra atual
+							if word["miss"] == false: # Se não houve nenhum erro na palavra
+								Jogo.vidas -= 1
+								word["miss"] = true
+								break
+				if Jogo.vidas < 0:
+					Jogo.vidas = Configuracoes.config["vidas"]
+					get_tree().change_scene_to_file("res://scenes/menu.tscn") # provavelmente temporário, talvez seja interessante fazer uma tela de game over
+				root_node.atualizar_ui_vidas()
+				
 				Jogo.add_erros()
 				var palavra_errada = null
 				# Encontrar a palavra correspondente à lacuna onde a letra foi solta
 				for palavra_atual in lacunas.selected_words:
-					for letra_posicao in palavra_atual:
+					for letra_posicao in palavra_atual["letters"]:
 						if letra_posicao[0] == current_snap_area:
-							palavra_errada = palavra_atual
+							palavra_errada = palavra_atual["letters"]
 							break
 					if palavra_errada:
 						break  # Palavra encontrada, pode sair do loop
 				if palavra_errada:
 					verify_type_error(letter_name, palavra_errada)
-					
+			
 			Jogo.add_letras_selecionadas()
 			position = original_position # move o botão para a posição de origem
 			accept_event()
@@ -125,20 +139,19 @@ func _gui_input(event: InputEvent) -> void:
 		accept_event()
 
 func check_snap_area(): 
-	for word in lacunas.selected_words: # Cada palavra
-		for letter in word: 
-			if not letter[0].is_occupied:
-				letter[0].modulate.a = 0.8  # Feedback visual para áreas disponíveis
-	
 	current_snap_area = null
-	for word in lacunas.selected_words:
-		for letter in word:
-			if letter[0].is_occupied:
+	for word in lacunas.selected_words: # Cada palavra
+		var letters = word["letters"]
+		for current_letter in letters: 
+			if not current_letter[0].is_occupied:
+				current_letter[0].modulate.a = 0.8  # Feedback visual para áreas disponíveis
+		for current_letter in letters:
+			if current_letter[0].is_occupied:
 				continue
-			if letter[0].get_global_rect().has_point(get_global_mouse_position()):
-				current_snap_area = letter[0]
-				current_snap_area_letter = letter[1]
-				letter[0].modulate.a = 1.2  # Feedback visual para área sob o mouse
+			if current_letter[0].get_global_rect().has_point(get_global_mouse_position()):
+				current_snap_area = current_letter[0]
+				current_snap_area_letter = current_letter[1]
+				current_letter[0].modulate.a = 1.2  # Feedback visual para área sob o mouse
 				break
 
 #função para verificar que tipo de erro

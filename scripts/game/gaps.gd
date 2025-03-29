@@ -1,6 +1,7 @@
 extends Control
 
-var selected_words = [[], [], [], []]
+var selected_words = [{"letters": [], "miss": false}, {"letters": [], "miss": false},
+{"letters": [], "miss": false}, {"letters": [], "miss": false}]
 var word_images = []  # Armazenará as imagens das palavras
 
 var fourl_words = [
@@ -97,14 +98,15 @@ func set_gaps(array_size: int) -> void:
 		# Criação das letras
 		for n in array_size:
 			var draggable = get_node("Arrastável").duplicate()
-			selected_words[i].append([draggable, word_str[n]])
+			selected_words[i]["letters"].append([draggable, word_str[n]])
 			add_child(draggable)
 			draggable.position = Vector2(x + (n * 80), y_positions[i])
 
 func verify_gaps() ->bool:
 	var completed = true
 	for w in selected_words:
-		for l in w:
+		var letters = w["letters"]
+		for l in letters:
 			if not(l[0].is_occupied):
 				completed = false
 				break

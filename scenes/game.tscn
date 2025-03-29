@@ -14,7 +14,6 @@
 [ext_resource type="Script" path="res://scripts/game/keyboard.gd" id="9_sll30"]
 [ext_resource type="Texture2D" uid="uid://c81ntatbx84im" path="res://recursos/letras/f.png" id="10_obdsf"]
 [ext_resource type="Texture2D" uid="uid://cnh4rfa0y7nep" path="res://recursos/letras/g.png" id="11_m2kqo"]
-[ext_resource type="Texture2D" uid="uid://c5qjutpc0vobl" path="res://recursos/letras/a.png" id="12_02fa5"]
 [ext_resource type="Texture2D" uid="uid://dc1tx6niopean" path="res://recursos/letras/h.png" id="12_p8qqq"]
 [ext_resource type="Texture2D" uid="uid://bu6vn3gfx3xv6" path="res://recursos/letras/i.png" id="13_62enl"]
 [ext_resource type="Texture2D" uid="uid://by5yfq650btj4" path="res://recursos/letras/j.png" id="14_ferq6"]
@@ -37,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://bpv34u1p0j71l" path="res://recursos/letras/z.png" id="30_631hs"]
 [ext_resource type="Texture2D" uid="uid://wblgq314faxd" path="res://recursos/letras/x.png" id="31_fwf74"]
 [ext_resource type="Script" path="res://scripts/global/botao_musica.gd" id="34_0w6ho"]
+[ext_resource type="Texture2D" uid="uid://dpduir8dbxkk7" path="res://recursos/config/Voltar.png" id="37_k363v"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -56,6 +56,20 @@ grow_vertical = 2
 texture = ExtResource("1_itbuk")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="Voltar" type="Button" parent="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 100)
+offset_left = 1038.0
+offset_top = 558.0
+offset_right = 1558.0
+offset_bottom = 1078.0
+scale = Vector2(0.15, 0.15)
+focus_mode = 0
+action_mode = 0
+icon = ExtResource("37_k363v")
+flat = true
+icon_alignment = 1
 
 [node name="MusgaOnOff" type="TextureButton" parent="Control"]
 custom_minimum_size = Vector2(70, 70)
@@ -114,7 +128,7 @@ offset_top = 315.0
 offset_right = -943.0
 offset_bottom = 390.0
 focus_mode = 0
-icon = ExtResource("12_02fa5")
+icon = ExtResource("4_75olx")
 flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
@@ -486,6 +500,7 @@ offset_bottom = 75.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="Control/Voltar" to="Control" method="_on_voltar_pressed"]
 [connection signal="pressed" from="Control/MusgaOnOff" to="Control" method="_on_musga_on_off_pressed"]
 [connection signal="pressed" from="Control/MusgaOnOff" to="Control/MusgaOnOff" method="_on_pressed"]
 [connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]

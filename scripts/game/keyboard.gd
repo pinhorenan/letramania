@@ -16,7 +16,8 @@ func spawn_keys(word_list) -> void:
 	rng.randomize()
 	
 	for word in word_list:
-		for l in word: # fazendo a busca de cada letra em cada palavra
+		var letters = word["letters"]
+		for l in letters: # fazendo a busca de cada letra em cada palavra
 			letter_name = l[1]
 			letter_node = get_node(letters_parent_path + letter_name).duplicate()
 			add_child(letter_node)
@@ -51,7 +52,7 @@ func _ready() -> void:
 
 func tip_letter(letter, type):
 	for key in key_list:
-		if key && key.letter_name == letter:
+		if is_instance_valid(key) && key.letter_name == letter:
 			var path = "res://recursos/letras/" + letter.to_lower() 
 			if type == 1:
 				var overlay = key.get_node_or_null("TipOverlay")

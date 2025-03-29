@@ -8,7 +8,6 @@ var musica: int
 @onready var label_vidas = $Vidas
 #var tempo_decorrido: float = 0.0
 var temporizador_ligado: bool = false
-var vidas: int = 3
 var pontuacao: int = 0
 
 func _ready() -> void:
@@ -16,7 +15,7 @@ func _ready() -> void:
 	Jogo.time_start = Jogo.get_time()
 	label_pontuacao.visible = Configuracoes.config.pontuacao_ativada
 	label_tempo.visible = Configuracoes.config.temporizador_ativado
-	vidas = Configuracoes.config.vidas  # Valor inicial
+	Jogo.vidas = Configuracoes.config.vidas  # Valor inicial
 	pontuacao = 0  # Começa do zero
 	atualizar_ui_vidas()
 	atualizar_ui_pontos()
@@ -64,13 +63,17 @@ func atualizar_ui_tempo():
 	label_tempo.text = "%02d:%02d" % [minutos, segundos]
 	
 func atualizar_ui_vidas():
-	label_vidas.text = "Vidas: %02d" % vidas
+	label_vidas.text = "Vidas: %02d" % Jogo.vidas
 	
 func atualizar_ui_pontos():
 	label_pontuacao.text = "%02d" % pontuacao
 	
 func _on_pause_changed(paused: bool):
 	temporizador_ligado = !paused
+
+func _on_voltar_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	Jogo.word_size = 3 # Interessante adicionar uma tela de confirmação aqui
 	
 # ----------------------------- Música
 

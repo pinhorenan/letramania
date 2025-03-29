@@ -8,7 +8,7 @@ extends Control
 var vidas_iniciais: int:
 	set(value):
 		# Garante que o valor sempre fique entre 1 e 99
-		value = clampi(value, 1, 99)
+		value = clampi(value, 1, 11)
 		Configuracoes.config.vidas = value
 		Configuracoes.salvar_todas_configuracoes()
 		label.text = str(value)
@@ -46,6 +46,6 @@ func _aumentar_vidas():
 
 func _diminuir_vidas():
 	if Configuracoes.config.vidas == 1:
-		vidas_iniciais = 99
+		vidas_iniciais = 11
 	else:
 		vidas_iniciais -= 1

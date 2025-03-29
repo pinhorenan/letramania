@@ -16,4 +16,5 @@ func _process(delta: float) -> void:
 func _on_inicio_pressed() -> void:
 	Jogo.word_size = 3 # Voltando para a primeira fase
 	Jogo.tempo_decorrido = 0.0 # Resetando temporizador
+	Jogo.vidas = Configuracoes.config["vidas"]
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
