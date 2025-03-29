@@ -12,15 +12,15 @@
 [ext_resource type="Script" path="res://scripts/global/botao_musica.gd" id="11_e6i2m"]
 [ext_resource type="Texture2D" uid="uid://dyc66xpyc3fm0" path="res://recursos/menu/Botões/VolumeDesligado.png" id="11_njevh"]
 [ext_resource type="Texture2D" uid="uid://nqbcjwwt8lf6" path="res://recursos/menu/Botões/Configuração.png" id="13_m2x8x"]
-[ext_resource type="Texture2D" uid="uid://c81ntatbx84im" path="res://recursos/letras/f.png" id="14_t4tlp"]
 [ext_resource type="Script" path="res://scripts/menu/girando.gd" id="15_0vx88"]
-[ext_resource type="Texture2D" uid="uid://bvrcbvavjobie" path="res://recursos/letras/o.png" id="16_str0a"]
+[ext_resource type="Texture2D" uid="uid://dxrnorqouoanp" path="res://recursos/letras/e.png" id="15_vdtvp"]
+[ext_resource type="Texture2D" uid="uid://deu0g3wlv2nr4" path="res://recursos/letras/t.png" id="16_o87y4"]
 [ext_resource type="Texture2D" uid="uid://dadwlsm5lbuyn" path="res://recursos/letras/r.png" id="17_p1gw0"]
 [ext_resource type="Texture2D" uid="uid://cxn7bo4qgwsn4" path="res://recursos/letras/m.png" id="18_d7kp2"]
 [ext_resource type="Texture2D" uid="uid://c5qjutpc0vobl" path="res://recursos/letras/a.png" id="19_gpfhg"]
-[ext_resource type="Texture2D" uid="uid://cym5f2qsfpxig" path="res://recursos/letras/p.png" id="20_213ko"]
+[ext_resource type="Texture2D" uid="uid://b23ut4623xvro" path="res://recursos/letras/n.png" id="20_be8vm"]
+[ext_resource type="Texture2D" uid="uid://bu6vn3gfx3xv6" path="res://recursos/letras/i.png" id="21_n7w1d"]
 [ext_resource type="Texture2D" uid="uid://b2wmbjvsu72xr" path="res://recursos/letras/l.png" id="21_xdyxl"]
-[ext_resource type="Texture2D" uid="uid://bkduj3o8acbx5" path="res://recursos/letras/v.png" id="22_xuaro"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -142,28 +142,28 @@ stretch_mode = 5
 position = Vector2(564, 134)
 script = ExtResource("15_0vx88")
 
-[node name="F" type="Sprite2D" parent="Titulo"]
+[node name="L" type="Sprite2D" parent="Titulo"]
 position = Vector2(-231, -41.6284)
 rotation = -0.0174533
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("14_t4tlp")
+texture = ExtResource("21_xdyxl")
 
-[node name="O" type="Sprite2D" parent="Titulo"]
+[node name="E" type="Sprite2D" parent="Titulo"]
 position = Vector2(-111, -41.6284)
 rotation = 0.0261799
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("16_str0a")
+texture = ExtResource("15_vdtvp")
 
-[node name="R" type="Sprite2D" parent="Titulo"]
+[node name="T" type="Sprite2D" parent="Titulo"]
 position = Vector2(9, -41.6284)
 rotation = -0.0349066
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("17_p1gw0")
+texture = ExtResource("16_o87y4")
 
-[node name="M" type="Sprite2D" parent="Titulo"]
+[node name="R" type="Sprite2D" parent="Titulo"]
 position = Vector2(129, -41.6284)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("18_d7kp2")
+texture = ExtResource("17_p1gw0")
 
 [node name="A" type="Sprite2D" parent="Titulo"]
 position = Vector2(249, -41.6284)
@@ -171,43 +171,32 @@ rotation = 0.0349066
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("19_gpfhg")
 
-[node name="A2" type="Sprite2D" parent="Titulo"]
+[node name="M" type="Sprite2D" parent="Titulo"]
 position = Vector2(-231, 58.3716)
 rotation = 0.0261799
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("19_gpfhg")
+texture = ExtResource("18_d7kp2")
 
-[node name="P" type="Sprite2D" parent="Titulo"]
-position = Vector2(-351, 58.3716)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("20_213ko")
-
-[node name="L" type="Sprite2D" parent="Titulo"]
+[node name="A2" type="Sprite2D" parent="Titulo"]
 position = Vector2(-111, 58.3716)
 rotation = -0.0174533
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("21_xdyxl")
+texture = ExtResource("19_gpfhg")
 
-[node name="A3" type="Sprite2D" parent="Titulo"]
+[node name="N" type="Sprite2D" parent="Titulo"]
 position = Vector2(9.00006, 58.3716)
 rotation = 0.0261799
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("19_gpfhg")
+texture = ExtResource("20_be8vm")
 
-[node name="V" type="Sprite2D" parent="Titulo"]
+[node name="I" type="Sprite2D" parent="Titulo"]
 position = Vector2(129, 58.3716)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("22_xuaro")
+texture = ExtResource("21_n7w1d")
 
-[node name="R2" type="Sprite2D" parent="Titulo"]
+[node name="A3" type="Sprite2D" parent="Titulo"]
 position = Vector2(249, 58.3716)
 rotation = -0.0261799
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("17_p1gw0")
-
-[node name="A4" type="Sprite2D" parent="Titulo"]
-position = Vector2(369, 58.3716)
-rotation = 0.0174533
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("19_gpfhg")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwmhvrf7mg30p"]
+[gd_scene load_steps=19 format=3 uid="uid://dwmhvrf7mg30p"]
 
 [ext_resource type="Script" path="res://scripts/menu/botoesMenu.gd" id="1_vtr75"]
 [ext_resource type="Texture2D" uid="uid://bm2k102hr7l15" path="res://recursos/background.png" id="2_obipv"]
@@ -8,6 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://dtusgt8y1h4fi" path="res://recursos/menu/Botões/VolumeLigado.png" id="6_36g0c"]
 [ext_resource type="Texture2D" uid="uid://dyc66xpyc3fm0" path="res://recursos/menu/Botões/VolumeDesligado.png" id="7_kt1it"]
 [ext_resource type="Script" path="res://scripts/global/botao_musica.gd" id="8_n316l"]
+[ext_resource type="AudioStream" uid="uid://dlw51gbkh3th3" path="res://recursos/parabenizacao/YAAAAAY.mp3" id="9_tlvx7"]
+[ext_resource type="Script" path="res://scripts/menu/girando.gd" id="10_85e1o"]
+[ext_resource type="Texture2D" uid="uid://cym5f2qsfpxig" path="res://recursos/letras/p.png" id="11_x4vst"]
+[ext_resource type="Texture2D" uid="uid://c5qjutpc0vobl" path="res://recursos/letras/a.png" id="12_rngme"]
+[ext_resource type="Texture2D" uid="uid://dadwlsm5lbuyn" path="res://recursos/letras/r.png" id="13_fn0f4"]
+[ext_resource type="Texture2D" uid="uid://dwksg8fcc1hcb" path="res://recursos/letras/b.png" id="14_cqbvu"]
+[ext_resource type="Texture2D" uid="uid://dxrnorqouoanp" path="res://recursos/letras/e.png" id="15_jpdst"]
+[ext_resource type="Texture2D" uid="uid://b23ut4623xvro" path="res://recursos/letras/n.png" id="16_w3vtr"]
+[ext_resource type="Texture2D" uid="uid://dr0bmk1mqct1h" path="res://recursos/letras/s.png" id="17_3ae0y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3a8o"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -29,20 +40,16 @@ grow_vertical = 2
 texture = ExtResource("2_obipv")
 expand_mode = 1
 
-[node name="Botoes" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(97, 144)
+sprite_frames = SubResource("SpriteFrames_q3a8o")
 
-[node name="Iniciar" type="TextureButton" parent="Botoes"]
+[node name="yaaay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_tlvx7")
+volume_db = -15.0
+autoplay = true
+
+[node name="Iniciar" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(400, 120)
 layout_mode = 1
 anchors_preset = 8
@@ -51,9 +58,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -206.0
-offset_top = -214.0
+offset_top = 76.0
 offset_right = 194.0
-offset_bottom = -94.0
+offset_bottom = 196.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("3_il0hl")
@@ -62,15 +69,15 @@ texture_hover = ExtResource("5_2c7to")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="MusgaOnOff" type="TextureButton" parent="Botoes"]
+[node name="MusgaOnOff" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -532.0
+offset_left = 24.0
 offset_top = -96.0
-offset_right = -462.0
+offset_right = 94.0
 offset_bottom = -26.0
 grow_vertical = 0
 focus_mode = 0
@@ -83,6 +90,56 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("8_n316l")
 
-[connection signal="pressed" from="Botoes/Iniciar" to="." method="_on_iniciar_pressed"]
-[connection signal="pressed" from="Botoes/MusgaOnOff" to="." method="_on_musga_on_off_pressed"]
-[connection signal="pressed" from="Botoes/MusgaOnOff" to="Botoes/MusgaOnOff" method="_on_pressed"]
+[node name="Titulo" type="Node2D" parent="."]
+position = Vector2(564, 134)
+script = ExtResource("10_85e1o")
+
+[node name="P" type="Sprite2D" parent="Titulo"]
+position = Vector2(-410, 100)
+rotation = -0.00872665
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_x4vst")
+
+[node name="A" type="Sprite2D" parent="Titulo"]
+position = Vector2(-290, 100)
+rotation = 0.0261799
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_rngme")
+
+[node name="R" type="Sprite2D" parent="Titulo"]
+position = Vector2(-170, 100)
+rotation = -0.0174533
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("13_fn0f4")
+
+[node name="A2" type="Sprite2D" parent="Titulo"]
+position = Vector2(-50, 100)
+rotation = 0.0261799
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_rngme")
+
+[node name="B" type="Sprite2D" parent="Titulo"]
+position = Vector2(70, 100)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_cqbvu")
+
+[node name="E" type="Sprite2D" parent="Titulo"]
+position = Vector2(190, 100)
+rotation = -0.0261799
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_jpdst")
+
+[node name="N" type="Sprite2D" parent="Titulo"]
+position = Vector2(310, 100)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_w3vtr")
+
+[node name="S" type="Sprite2D" parent="Titulo"]
+position = Vector2(430, 100)
+rotation = 0.0261799
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_3ae0y")
+
+[connection signal="pressed" from="Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="MusgaOnOff" to="." method="_on_musga_on_off_pressed"]
+[connection signal="pressed" from="MusgaOnOff" to="MusgaOnOff" method="_on_pressed"]
