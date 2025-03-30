@@ -18,31 +18,31 @@ var fourl_words = [
 ] # 10 palavras com imagens
 
 var fivel_words = [
-	{"image": "", "word": "APITO"},
-	{"image": "", "word": "PENTE"},
-	{"image": "", "word": "LIVRO"},
-	{"image": "", "word": "LAPIS"},
-	{"image": "", "word": "JARRA"},
-	{"image": "", "word": "PIANO"},
-	{"image": "", "word": "PORTA"},
-	{"image": "", "word": "CHAVE"},
-	{"image": "", "word": "PEDRA"},
-	{"image": "", "word": "COBRA"},
-	{"image": "", "word": "ZEBRA"},
+	{"image": "res://recursos/vetores/apito.png", "word": "APITO"},
+	{"image": "res://recursos/vetores/pente.png", "word": "PENTE"},
+	{"image": "res://recursos/vetores/livro.png", "word": "LIVRO"},
+	{"image": "res://recursos/vetores/lapis.png", "word": "LAPIS"},
+	{"image": "res://recursos/vetores/jarra.png", "word": "JARRA"},
+	{"image": "res://recursos/vetores/piano.png", "word": "PIANO"},
+	{"image": "res://recursos/vetores/porta.png", "word": "PORTA"},
+	{"image": "res://recursos/vetores/chave.png", "word": "CHAVE"},
+	{"image": "res://recursos/vetores/pedra.png", "word": "PEDRA"},
+	{"image": "res://recursos/vetores/cobra.png", "word": "COBRA"},
+	{"image": "res://recursos/vetores/zebra.png", "word": "ZEBRA"},
 ]
 
 var sixl_words = [
-	{"image": "", "word": "COLHER"},
-	{"image": "", "word": "SAPATO"},
-	{"image": "", "word": "BONECA"},
-	{"image": "", "word": "TIJOLO"},
-	{"image": "", "word": "PANELA"},
-	{"image": "", "word": "ABAJUR"},
-	{"image": "", "word": "GIRAFA"},
-	{"image": "", "word": "CAVALO"},
-	{"image": "", "word": "MACACO"},
-	{"image": "", "word": "BANANA"},
-	{"image": "", "word": "TOMATE"},
+	{"image": "res://recursos/vetores/colher.png", "word": "COLHER"},
+	{"image": "res://recursos/vetores/sapato.png", "word": "SAPATO"},
+	{"image": "res://recursos/vetores/boneca.png", "word": "BONECA"},
+	{"image": "res://recursos/vetores/tijolo.png", "word": "TIJOLO"},
+	{"image": "res://recursos/vetores/panela.png", "word": "PANELA"},
+	{"image": "res://recursos/vetores/abajur.png", "word": "ABAJUR"},
+	{"image": "res://recursos/vetores/girafa.png", "word": "GIRAFA"},
+	{"image": "res://recursos/vetores/cavalo.png", "word": "CAVALO"},
+	{"image": "res://recursos/vetores/macaco.png", "word": "MACACO"},
+	{"image": "res://recursos/vetores/banana.png", "word": "BANANA"},
+	{"image": "res://recursos/vetores/tomate.png", "word": "TOMATE"},
 ]
 
 func set_gaps(array_size: int) -> void:

@@ -23,9 +23,9 @@ func _process(delta: float) -> void:
 		
 		if indo:
 			filho.rotation_degrees -= 1 * delta
-			if filho.rotation_degrees <= -3:
+			if filho.rotation_degrees <= -5:
 				estados_filhos[filho] = false
 		else:
 			filho.rotation_degrees += 1 * delta
-			if filho.rotation_degrees >= 3:
+			if filho.rotation_degrees >= 5:
 				estados_filhos[filho] = true

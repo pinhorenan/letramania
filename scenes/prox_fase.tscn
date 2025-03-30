@@ -96,7 +96,7 @@ script = ExtResource("10_85e1o")
 
 [node name="P" type="Sprite2D" parent="Titulo"]
 position = Vector2(-410, 100)
-rotation = -0.00872665
+rotation = -0.0610865
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("11_x4vst")
 
@@ -108,13 +108,13 @@ texture = ExtResource("12_rngme")
 
 [node name="R" type="Sprite2D" parent="Titulo"]
 position = Vector2(-170, 100)
-rotation = -0.0174533
+rotation = -0.0349066
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("13_fn0f4")
 
 [node name="A2" type="Sprite2D" parent="Titulo"]
 position = Vector2(-50, 100)
-rotation = 0.0261799
+rotation = 0.0610865
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("12_rngme")
 
@@ -125,18 +125,19 @@ texture = ExtResource("14_cqbvu")
 
 [node name="E" type="Sprite2D" parent="Titulo"]
 position = Vector2(190, 100)
-rotation = -0.0261799
+rotation = -0.0698132
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("15_jpdst")
 
 [node name="N" type="Sprite2D" parent="Titulo"]
 position = Vector2(310, 100)
+rotation = 0.0610865
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("16_w3vtr")
 
 [node name="S" type="Sprite2D" parent="Titulo"]
 position = Vector2(430, 100)
-rotation = 0.0261799
+rotation = -0.0174533
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("17_3ae0y")
 
