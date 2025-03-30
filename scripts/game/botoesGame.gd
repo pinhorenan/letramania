@@ -10,8 +10,54 @@ var musica: int
 var temporizador_ligado: bool = false
 var pontuacao: int = 0
 @onready var botao_click = get_node("Click")
+@onready var confirmation_dialog = $ConfirmationDialog
 
-func _ready() -> void:
+func _ready():
+	# ESTILIZAÇÃO DO CONFIRMATIONDIALOGE
+	var theme = Theme.new()
+	var font = load("res://recursos/musicas e fontes/Gilroy-Black.ttf")
+	var font_size = 24
+	var label_settings = LabelSettings.new()
+	label_settings.font = font
+	label_settings.font_size = 24
+	
+	var button_style = StyleBoxFlat.new()
+	button_style.bg_color = Color(0.35, 0.35, 0.35)  # Cor cinza escuro
+	button_style.corner_radius_top_left = 5
+	button_style.corner_radius_bottom_right = 5
+	
+	var ok_button = confirmation_dialog.get_ok_button()
+	var cancel_button = confirmation_dialog.get_cancel_button()
+	
+	ok_button.focus_mode = Control.FOCUS_NONE
+	cancel_button.focus_mode = Control.FOCUS_NONE
+	
+	theme.set_font("font", "Button", font)
+	theme.set_font_size("font_size", "Button", font_size)
+	theme.set_color("font_color", "Button", Color.WHITE)
+	
+	# Centraliza o texto dos botões
+	var dialog_label = confirmation_dialog.get_label()
+	dialog_label.label_settings = label_settings
+	dialog_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	
+	# --- APLICA O TEMA ---
+	confirmation_dialog.theme = theme
+	
+	# ------------------------------------------------------------------------
+	
+	confirmation_dialog.hide()
+	confirmation_dialog.set_flag(Window.FLAG_BORDERLESS, true)
+	confirmation_dialog.set_flag(Window.FLAG_RESIZE_DISABLED, true)
+	confirmation_dialog.dialog_text = "Deseja realmente sair do jogo?"
+	confirmation_dialog.get_ok_button().text = "Sim"
+	confirmation_dialog.get_cancel_button().text = "Não"
+	confirmation_dialog.exclusive = false
+	
+	# Conexão dos sinais
+	confirmation_dialog.confirmed.connect(_on_confirmation_dialog_confirmed)
+	confirmation_dialog.canceled.connect(_on_confirmation_dialog_canceled)
+	
 	ajustar_background()
 	Jogo.time_start = Jogo.get_time()
 	label_pontuacao.visible = Configuracoes.config.pontuacao_ativada
@@ -72,11 +118,6 @@ func atualizar_ui_pontos():
 func _on_pause_changed(paused: bool):
 	temporizador_ligado = !paused
 
-func _on_voltar_pressed() -> void:
-	botao_click.play()
-	get_tree().change_scene_to_file("res://scenes/menu.tscn")
-	Jogo.word_size = 3 # Interessante adicionar uma tela de confirmação aqui
-	
 # ----------------------------- Música
 
 func _on_musga_on_off_pressed() -> void:
@@ -90,3 +131,24 @@ func check_snap_area():
 	for area in get_tree().get_nodes_in_group("arrastaveis"):
 			if not area.is_occupied:
 				area.modulate.a = 0.8  # Feedback visual para áreas disponíveis
+				
+func _on_exit_button_pressed():
+	get_tree().paused = true
+	confirmation_dialog.popup_centered_ratio(0.3)  # Tamanho relativo à tela
+
+func _on_voltar_pressed() -> void:
+	botao_click.play()
+	Jogo.word_size = 3
+	# Pausa apenas a física e lógica do jogo, mantendo a UI ativa
+	get_tree().paused = true
+	# Mantém o diálogo processando input mesmo com o jogo pausado
+	confirmation_dialog.process_mode = Node.PROCESS_MODE_ALWAYS
+	confirmation_dialog.popup_centered_ratio(0.3)
+
+func _on_confirmation_dialog_confirmed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+
+func _on_confirmation_dialog_canceled():
+	get_tree().paused = false
+	confirmation_dialog.hide()

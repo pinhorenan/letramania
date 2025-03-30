@@ -516,7 +516,15 @@ offset_bottom = 75.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Control"]
+initial_position = 2
+size = Vector2i(400, 200)
+visible = true
+cancel_button_text = "NÃO"
+
 [connection signal="pressed" from="Control/Voltar" to="Control" method="_on_voltar_pressed"]
 [connection signal="pressed" from="Control/MusgaOnOff" to="Control" method="_on_musga_on_off_pressed"]
 [connection signal="pressed" from="Control/MusgaOnOff" to="Control/MusgaOnOff" method="_on_pressed"]
 [connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]
+[connection signal="canceled" from="Control/ConfirmationDialog" to="Control" method="_on_confirmation_dialog_canceled"]
+[connection signal="confirmed" from="Control/ConfirmationDialog" to="Control" method="_on_confirmation_dialog_confirmed"]
