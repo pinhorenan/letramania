@@ -14,6 +14,8 @@ var idle_time := 0
 var tip_timeout = 3000
 @onready var keyboard = get_node("/root/Node2D/Control/Letras")
 
+@onready var erro = get_node("/root/Node2D/Control/Errado")
+@onready var certo = get_node("/root/Node2D/Control/Correto")
 
 func is_idle():
 	if not completed:
@@ -76,6 +78,7 @@ func _gui_input(event: InputEvent) -> void:
 			is_dragging = false
 			if current_snap_area and not current_snap_area.is_occupied and current_snap_area_letter == letter_name:
 				# Cria um novo botão para preencher a área
+				certo.play()
 				var new_button = duplicate()
 				
 				# Encaixa a cópia da letra na área
@@ -125,10 +128,11 @@ func _gui_input(event: InputEvent) -> void:
 							palavra_errada = palavra_atual["letters"]
 							break
 					if palavra_errada:
+						erro.play()
 						break  # Palavra encontrada, pode sair do loop
 				if palavra_errada:
 					verify_type_error(letter_name, palavra_errada)
-			
+					
 			Jogo.add_letras_selecionadas()
 			position = original_position # move o botão para a posição de origem
 			accept_event()
@@ -165,5 +169,4 @@ func verify_type_error(letter_name: String, word: Array):
 		return  # A letra existe, mas foi colocada no lugar errado
 	else:
 		Jogo.add_erro_escolha()
-		
 		return  # A letra não existe na palavra

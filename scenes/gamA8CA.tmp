@@ -1,14 +1,12 @@
-[gd_scene load_steps=41 format=3 uid="uid://khsg2ndeh4xi"]
+[gd_scene load_steps=39 format=3 uid="uid://khsg2ndeh4xi"]
 
 [ext_resource type="Texture2D" uid="uid://bm2k102hr7l15" path="res://recursos/background.png" id="1_itbuk"]
 [ext_resource type="Script" path="res://scripts/game/ocupado.gd" id="2_0v8sj"]
 [ext_resource type="Script" path="res://scripts/game/area_colisao.gd" id="2_65ee8"]
 [ext_resource type="Script" path="res://scripts/game/botoesGame.gd" id="2_75y6d"]
-[ext_resource type="AudioStream" uid="uid://dkkhlhxm08ta2" path="res://recursos/jogo/button-click.mp3" id="3_dbxom"]
 [ext_resource type="AudioStream" uid="uid://d4fynsv1uo2us" path="res://recursos/jogo/wrong_5.mp3" id="3_pt5nm"]
 [ext_resource type="Script" path="res://scripts/game/arrastar.gd" id="3_s6wji"]
 [ext_resource type="Texture2D" uid="uid://c5qjutpc0vobl" path="res://recursos/letras/a.png" id="4_75olx"]
-[ext_resource type="AudioStream" uid="uid://dd3sicceq2pxa" path="res://recursos/jogo/answer-correct.mp3" id="4_l8fbo"]
 [ext_resource type="Texture2D" uid="uid://dwksg8fcc1hcb" path="res://recursos/letras/b.png" id="6_f7p2w"]
 [ext_resource type="Script" path="res://scripts/game/gaps.gd" id="6_sg7ji"]
 [ext_resource type="Texture2D" uid="uid://cu8wnnoduap2l" path="res://recursos/letras/c.png" id="7_uss7y"]
@@ -60,17 +58,9 @@ texture = ExtResource("1_itbuk")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Click" type="AudioStreamPlayer" parent="Control"]
-stream = ExtResource("3_dbxom")
-volume_db = -10.0
-
 [node name="Errado" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("3_pt5nm")
 volume_db = -20.0
-
-[node name="Correto" type="AudioStreamPlayer" parent="Control"]
-stream = ExtResource("4_l8fbo")
-volume_db = -15.0
 
 [node name="Voltar" type="Button" parent="Control"]
 clip_contents = true

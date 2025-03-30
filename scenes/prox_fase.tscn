@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/menu/botoesMenu.gd" id="1_vtr75"]
 [ext_resource type="Texture2D" uid="uid://bm2k102hr7l15" path="res://recursos/background.png" id="2_obipv"]
+[ext_resource type="AudioStream" uid="uid://dkkhlhxm08ta2" path="res://recursos/jogo/button-click.mp3" id="3_bxvw3"]
 [ext_resource type="Texture2D" uid="uid://dc8wpb8pe6hj" path="res://recursos/parabenizacao/Botões/ContinuarBase.png" id="3_il0hl"]
 [ext_resource type="Texture2D" uid="uid://xc3ivuhl62xi" path="res://recursos/parabenizacao/Botões/ContinuarPressed.png" id="4_8f3qe"]
 [ext_resource type="Texture2D" uid="uid://c5bdvet6g6rau" path="res://recursos/parabenizacao/Botões/ContinuarHighlight.png" id="5_2c7to"]
@@ -17,8 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://dxrnorqouoanp" path="res://recursos/letras/e.png" id="15_jpdst"]
 [ext_resource type="Texture2D" uid="uid://b23ut4623xvro" path="res://recursos/letras/n.png" id="16_w3vtr"]
 [ext_resource type="Texture2D" uid="uid://dr0bmk1mqct1h" path="res://recursos/letras/s.png" id="17_3ae0y"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_q3a8o"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -40,9 +39,9 @@ grow_vertical = 2
 texture = ExtResource("2_obipv")
 expand_mode = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(97, 144)
-sprite_frames = SubResource("SpriteFrames_q3a8o")
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bxvw3")
+volume_db = -10.0
 
 [node name="yaaay" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_tlvx7")

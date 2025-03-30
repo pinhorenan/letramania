@@ -9,6 +9,7 @@ var musica: int
 #var tempo_decorrido: float = 0.0
 var temporizador_ligado: bool = false
 var pontuacao: int = 0
+@onready var botao_click = get_node("Click")
 
 func _ready() -> void:
 	ajustar_background()
@@ -72,12 +73,14 @@ func _on_pause_changed(paused: bool):
 	temporizador_ligado = !paused
 
 func _on_voltar_pressed() -> void:
+	botao_click.play()
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	Jogo.word_size = 3 # Interessante adicionar uma tela de confirmação aqui
 	
 # ----------------------------- Música
 
 func _on_musga_on_off_pressed() -> void:
+	botao_click.play()
 	var is_muted = AudioServer.is_bus_mute(musica)
 	AudioServer.set_bus_mute(musica, not is_muted)
 

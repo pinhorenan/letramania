@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b4pw1nhcnhfnr"]
+[gd_scene load_steps=23 format=3 uid="uid://b4pw1nhcnhfnr"]
 
 [ext_resource type="Texture2D" uid="uid://bm2k102hr7l15" path="res://recursos/background.png" id="1_04q62"]
 [ext_resource type="Script" path="res://scripts/menu/botoesMenu.gd" id="1_qvqax"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://b23ut4623xvro" path="res://recursos/letras/n.png" id="20_be8vm"]
 [ext_resource type="Texture2D" uid="uid://bu6vn3gfx3xv6" path="res://recursos/letras/i.png" id="21_n7w1d"]
 [ext_resource type="Texture2D" uid="uid://b2wmbjvsu72xr" path="res://recursos/letras/l.png" id="21_xdyxl"]
+[ext_resource type="AudioStream" uid="uid://dkkhlhxm08ta2" path="res://recursos/jogo/button-click.mp3" id="22_xdh42"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -41,6 +42,10 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_04q62")
 expand_mode = 1
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_xdh42")
+volume_db = -10.0
 
 [node name="Botoes" type="Control" parent="."]
 layout_mode = 1

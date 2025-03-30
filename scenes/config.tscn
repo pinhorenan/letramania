@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://klts52bc3exe"]
+[gd_scene load_steps=11 format=3 uid="uid://klts52bc3exe"]
 
 [ext_resource type="Texture2D" uid="uid://bm2k102hr7l15" path="res://recursos/background.png" id="1_j6arj"]
 [ext_resource type="Script" path="res://scripts/configs/botoesConfig.gd" id="1_w7iws"]
 [ext_resource type="Texture2D" uid="uid://b1u1celrxklxs" path="res://recursos/config/Retangulo_Opaco.png" id="3_bl5ny"]
+[ext_resource type="AudioStream" uid="uid://dkkhlhxm08ta2" path="res://recursos/jogo/button-click.mp3" id="3_m5bkl"]
 [ext_resource type="Texture2D" uid="uid://dpduir8dbxkk7" path="res://recursos/config/Voltar.png" id="3_sccdn"]
 [ext_resource type="FontFile" uid="uid://dghd7xtaj5ayp" path="res://recursos/musicas e fontes/Gilroy-Bold.ttf" id="5_0tuuy"]
 [ext_resource type="Texture2D" uid="uid://dap2csy3ys3yk" path="res://recursos/config/BotaoOff.png" id="5_ayfbt"]
@@ -27,6 +28,10 @@ offset_right = 1233.0
 offset_bottom = 711.0
 texture = ExtResource("1_j6arj")
 expand_mode = 1
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_m5bkl")
+volume_db = -10.0
 
 [node name="FundoTexto" type="Sprite2D" parent="."]
 position = Vector2(576, 332)
