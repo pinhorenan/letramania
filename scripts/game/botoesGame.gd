@@ -8,7 +8,6 @@ var musica: int
 @onready var label_vidas = $Vidas
 #var tempo_decorrido: float = 0.0
 var temporizador_ligado: bool = false
-var pontuacao: int = 0
 @onready var botao_click = get_node("Click")
 @onready var confirmation_dialog = $ConfirmationDialog
 
@@ -62,8 +61,9 @@ func _ready():
 	Jogo.time_start = Jogo.get_time()
 	label_pontuacao.visible = Configuracoes.config.pontuacao_ativada
 	label_tempo.visible = Configuracoes.config.temporizador_ativado
-	Jogo.vidas = Configuracoes.config.vidas  # Valor inicial
-	pontuacao = 0  # Começa do zero
+	if Jogo.word_size == 4: # Verifica se está no início do jogo
+		Jogo.vidas = Configuracoes.config.vidas  # Valor inicial
+		Jogo.pontuacao = 0  # Começa do zero
 	atualizar_ui_vidas()
 	atualizar_ui_pontos()
 	
@@ -113,7 +113,7 @@ func atualizar_ui_vidas():
 	label_vidas.text = "Vidas: %02d" % Jogo.vidas
 	
 func atualizar_ui_pontos():
-	label_pontuacao.text = "%02d" % pontuacao
+	label_pontuacao.text = "%02d" % Jogo.pontuacao
 	
 func _on_pause_changed(paused: bool):
 	temporizador_ligado = !paused

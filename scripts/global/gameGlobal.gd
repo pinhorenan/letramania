@@ -21,7 +21,8 @@ var total_idle_time1 := 0.0 #OK
 var total_idle_time2 := 0.0 #OK
 var total_idle_time3 := 0.0 #OK
 
-var vidas
+var vidas: int
+var pontuacao: int
 
 func add_letras_selecionadas():
 	letras_selecionadas += 1

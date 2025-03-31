@@ -61,86 +61,83 @@ func _process(delta: float) -> void:
 func _gui_input(event: InputEvent) -> void:
 	var root_node = get_parent().get_parent()
 	#<<<<<<< HEAD
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed:  # Botão pressionado
-			idle_time = Time.get_ticks_msec() - Jogo.aux_time  
-			Jogo.add_idle_time(idle_time)  
-			if is_snapped:
-				# Se a letra já está encaixada, permita movê-la novamente
-				current_snap_area.is_occupied = false
-				current_snap_area.modulate.a = 1.0  # Resetar opacidade
-				current_snap_area = null
-				is_snapped = false
-			is_dragging = true
-			offset = get_local_mouse_position()
-		else:  # Botão solto
-			Jogo.aux_time = Time.get_ticks_msec() 
-			is_dragging = false
-			if current_snap_area and not current_snap_area.is_occupied and current_snap_area_letter == letter_name:
-				# Cria um novo botão para preencher a área
-				certo.play()
-				var new_button = duplicate()
-				
-				# Encaixa a cópia da letra na área
-				current_snap_area.is_occupied = true
-				current_snap_area.modulate.a = 0.0  # Opacidade total ao encaixar
-				new_button.position = current_snap_area.global_position - get_parent().global_position
-				get_parent().add_child(new_button)
-				is_snapped = true
-				Jogo.add_acertos()
-				queue_free() # remove a letra do "teclado". "
-				completed = lacunas.verify_gaps()
-				if completed:
-					root_node.parar_temporizador() # Sim. Se possível eu arrumo depois
-					if Jogo.word_size < 6:
-						idle_time = Time.get_ticks_msec() - Jogo.aux_time  
-						Jogo.add_idle_time(idle_time)
+	if not(is_snapped):
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed:  # Botão pressionado
+				idle_time = Time.get_ticks_msec() - Jogo.aux_time  
+				Jogo.add_idle_time(idle_time)  
+				is_dragging = true
+				offset = get_local_mouse_position()
+			else:  # Botão solto
+				Jogo.aux_time = Time.get_ticks_msec() 
+				is_dragging = false
+				if current_snap_area and not current_snap_area.is_occupied and current_snap_area_letter == letter_name:
+					# Cria um novo botão para preencher a área
+					certo.play()
+					var new_button = duplicate()
+					
+					# Encaixa a cópia da letra na área
+					current_snap_area.is_occupied = true
+					current_snap_area.modulate.a = 0.0  # Opacidade total ao encaixar
+					new_button.position = current_snap_area.global_position - get_parent().global_position
+					get_parent().add_child(new_button)
+					new_button.is_snapped = true
+					Jogo.add_acertos()
+					
+					# Adiciona a pontuação conforme a ocorrência de erro ou não na palavra
+					for word in lacunas.selected_words:
+						for letters in word["letters"]:
+							if letters[0].get_global_rect().has_point(get_global_mouse_position()): # Verificar a letra atual, para saber qual a palavra atual
+								Jogo.pontuacao += word["letter_value"]
+								root_node.atualizar_ui_pontos()
+								break
+					queue_free() # remove a letra do "teclado".
+					completed = lacunas.verify_gaps()
+					if completed:
+						root_node.parar_temporizador() # Sim. Se possível eu arrumo depois
+						if Jogo.word_size < 6:
+							idle_time = Time.get_ticks_msec() - Jogo.aux_time  
+							Jogo.add_idle_time(idle_time)
 						if Jogo.word_size == 4:
 							Jogo.set_inatividade_fase1()
 							print(Jogo.total_idle_time1)
 						elif Jogo.word_size == 5:
 							Jogo.set_inatividade_fase2()
 							print(Jogo.total_idle_time2)
-						get_tree().change_scene_to_file("res://scenes/prox_fase.tscn")
-					else:
-						if Jogo.word_size == 6:
+						else:
 							Jogo.set_inatividade_fase3()
-						get_tree().change_scene_to_file("res://scenes/fim.tscn")
-			else:
-				for word in lacunas.selected_words:
-					for letters in word["letters"]:
-						if letters[0].get_global_rect().has_point(get_global_mouse_position()): # Verificar a letra atual, para saber qual a palavra atual
-							if word["miss"] == false: # Se não houve nenhum erro na palavra
-								Jogo.vidas -= 1
-								word["miss"] = true
-								break
-				if Jogo.vidas < 0:
-					Jogo.vidas = Configuracoes.config["vidas"]
-					get_tree().change_scene_to_file("res://scenes/menu.tscn") # provavelmente temporário, talvez seja interessante fazer uma tela de game over
-				root_node.atualizar_ui_vidas()
-				
-				Jogo.add_erros()
-				var palavra_errada = null
-				# Encontrar a palavra correspondente à lacuna onde a letra foi solta
-				for palavra_atual in lacunas.selected_words:
-					for letra_posicao in palavra_atual["letters"]:
-						if letra_posicao[0] == current_snap_area:
-							palavra_errada = palavra_atual["letters"]
-							break
-					if palavra_errada:
-						erro.play()
-						break  # Palavra encontrada, pode sair do loop
-				if palavra_errada:
-					verify_type_error(letter_name, palavra_errada)
+						get_tree().change_scene_to_file("res://scenes/prox_fase.tscn")
+				else:
+					if not(already_missed()):
+						Jogo.vidas -= 1
+						
+					if Jogo.vidas < 0:
+						Jogo.vidas = Configuracoes.config["vidas"]
+						get_tree().change_scene_to_file("res://scenes/menu.tscn") # provavelmente temporário, talvez seja interessante fazer uma tela de game over
+					root_node.atualizar_ui_vidas()
 					
-			Jogo.add_letras_selecionadas()
-			position = original_position # move o botão para a posição de origem
+					Jogo.add_erros()
+					var palavra_errada = null
+					# Encontrar a palavra correspondente à lacuna onde a letra foi solta
+					for palavra_atual in lacunas.selected_words:
+						for letra_posicao in palavra_atual["letters"]:
+							if letra_posicao[0] == current_snap_area:
+								palavra_errada = palavra_atual["letters"]
+								break
+						if palavra_errada:
+							erro.play()
+							break  # Palavra encontrada, pode sair do loop
+					if palavra_errada:
+						verify_type_error(letter_name, palavra_errada)
+						
+				Jogo.add_letras_selecionadas()
+				position = original_position # move o botão para a posição de origem
+				accept_event()
+				
+		elif event is InputEventMouseMotion and is_dragging:
+			position = get_global_mouse_position() - offset - get_parent().global_position
+			check_snap_area()
 			accept_event()
-			
-	elif event is InputEventMouseMotion and is_dragging:
-		position = get_global_mouse_position() - offset - get_parent().global_position
-		check_snap_area()
-		accept_event()
 
 func check_snap_area(): 
 	current_snap_area = null
@@ -170,3 +167,16 @@ func verify_type_error(letter_name: String, word: Array):
 	else:
 		Jogo.add_erro_escolha()
 		return  # A letra não existe na palavra
+		
+func already_missed():
+	var missed = true
+	for word in lacunas.selected_words:
+		for letters in word["letters"]:
+			if letters[0].get_global_rect().has_point(get_global_mouse_position()): # Verificar a letra atual, para saber qual a palavra atual
+				if word["miss"] == false: # Se não houve nenhum outro erro na palavra
+					missed = false
+					word["miss"] = true
+					word["letter_value"] = 50
+					break
+	return missed
+	

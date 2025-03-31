@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Forma Palavra"
+config/name="Letra Mania"
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://recursos/letras/p.png"
+config/icon="res://recursos/letras/l.png"
 
 [audio]
 

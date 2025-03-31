@@ -4,7 +4,7 @@ extends Control
 @onready var label = $Vidas
 @onready var btn_aumentar = $AumentarVidas
 @onready var btn_diminuir = $DiminuirVidas
-@onready var botao_click = get_node("Click")
+@onready var botao_click = get_parent().get_node("Click")
 
 var vidas_iniciais: int:
 	set(value):
@@ -41,7 +41,7 @@ func atualizar_vidas():
 # Função chamada quando o botão de aumentar é pressionado
 func _aumentar_vidas():
 	botao_click.play()
-	if Configuracoes.config.vidas == 99:
+	if Configuracoes.config.vidas == 11:
 		vidas_iniciais = 1
 	else:
 		vidas_iniciais += 1

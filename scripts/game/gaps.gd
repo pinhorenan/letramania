@@ -1,7 +1,9 @@
 extends Control
 
-var selected_words = [{"letters": [], "miss": false}, {"letters": [], "miss": false},
-{"letters": [], "miss": false}, {"letters": [], "miss": false}]
+var selected_words = [{"letters": [], "miss": false, "letter_value": 100}, 
+{"letters": [], "miss": false, "letter_value": 100},
+{"letters": [], "miss": false, "letter_value": 100},
+{"letters": [], "miss": false, "letter_value": 100}]
 var word_images = []  # Armazenará as imagens das palavras
 
 var fourl_words = [
@@ -82,7 +84,6 @@ func set_gaps(array_size: int) -> void:
 					x += 540
 		var word_data = words[selected_indices[i]]
 		var word_str = word_data["word"]
-		print(words[selected_indices[i]])
 		
 		# Adiciona imagem da palavra
 		if word_data["image"] != "":
@@ -113,5 +114,5 @@ func verify_gaps() ->bool:
 	return completed
 
 func _ready() -> void:
-	var completed = false
+	#var completed = false
 	set_gaps(Jogo.word_size)
