@@ -138,6 +138,14 @@ func _on_exit_button_pressed():
 
 func _on_voltar_pressed() -> void:
 	botao_click.play()
+	if Jogo.word_size == 4:
+		Jogo.set_inatividade_fase1()
+	elif Jogo.word_size == 5:
+		Jogo.set_inatividade_fase2()
+	elif Jogo.word_size == 6:
+		Jogo.set_inatividade_fase2()
+	Jogo.completo = "INTERROMPIDO"
+	Jogo.salvar_dados_no_csv()
 	Jogo.word_size = 3
 	# Pausa apenas a física e lógica do jogo, mantendo a UI ativa
 	get_tree().paused = true

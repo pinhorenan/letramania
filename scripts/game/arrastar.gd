@@ -64,6 +64,7 @@ func _gui_input(event: InputEvent) -> void:
 	if not(is_snapped):
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:  # Botão pressionado
+				Jogo.add_letras_selecionadas()
 				idle_time = Time.get_ticks_msec() - Jogo.aux_time  
 				Jogo.add_idle_time(idle_time)  
 				is_dragging = true
@@ -100,22 +101,18 @@ func _gui_input(event: InputEvent) -> void:
 							Jogo.add_idle_time(idle_time)
 						if Jogo.word_size == 4:
 							Jogo.set_inatividade_fase1()
-							print(Jogo.total_idle_time1)
 						elif Jogo.word_size == 5:
 							Jogo.set_inatividade_fase2()
-							print(Jogo.total_idle_time2)
 						else:
 							Jogo.set_inatividade_fase3()
+							Jogo.completo = "SIM"
+							Jogo.salvar_dados_no_csv()
 						get_tree().change_scene_to_file("res://scenes/prox_fase.tscn")
 				else:
+					Jogo.add_erros()
 					if not(already_missed()):
 						Jogo.vidas -= 1
-						
-					if Jogo.vidas < 0:
-						get_tree().change_scene_to_file("res://scenes/menu.tscn") # provavelmente temporário, talvez seja interessante fazer uma tela de game over
-					root_node.atualizar_ui_vidas()
 					
-					Jogo.add_erros()
 					var palavra_errada = null
 					# Encontrar a palavra correspondente à lacuna onde a letra foi solta
 					for palavra_atual in lacunas.selected_words:
@@ -128,8 +125,20 @@ func _gui_input(event: InputEvent) -> void:
 							break  # Palavra encontrada, pode sair do loop
 					if palavra_errada:
 						verify_type_error(letter_name, palavra_errada)
-						
-				Jogo.add_letras_selecionadas()
+					
+					if Jogo.vidas < 0:
+						Jogo.completo = "S/ VIDAS"
+						if Jogo.word_size == 4:
+							Jogo.set_inatividade_fase1()
+						elif Jogo.word_size == 5:
+							Jogo.set_inatividade_fase2()
+						elif Jogo.word_size == 6:
+							Jogo.set_inatividade_fase2()
+							Jogo.word_size = 3
+							Jogo.salvar_dados_no_csv()
+						get_tree().change_scene_to_file("res://scenes/menu.tscn") # provavelmente temporário, talvez seja interessante fazer uma tela de game over
+					root_node.atualizar_ui_vidas()
+					
 				position = original_position # move o botão para a posição de origem
 				accept_event()
 				
