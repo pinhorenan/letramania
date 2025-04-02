@@ -118,8 +118,8 @@ script = ExtResource("6_sg7ji")
 layout_mode = 0
 offset_left = -279.0
 offset_top = 195.0
-offset_right = -204.0
-offset_bottom = 270.0
+offset_right = -209.0
+offset_bottom = 265.0
 color = Color(1, 1, 1, 0.196078)
 script = ExtResource("2_0v8sj")
 
@@ -137,12 +137,12 @@ grow_vertical = 0
 script = ExtResource("9_sll30")
 
 [node name="A" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -1018.0
 offset_top = 315.0
-offset_right = -943.0
-offset_bottom = 390.0
+offset_right = -948.0
+offset_bottom = 385.0
 focus_mode = 0
 icon = ExtResource("4_75olx")
 flat = true
@@ -150,12 +150,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="ATip" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -1018.0
 offset_top = 315.0
-offset_right = -943.0
-offset_bottom = 390.0
+offset_right = -948.0
+offset_bottom = 385.0
 focus_mode = 0
 icon = ExtResource("4_75olx")
 flat = true
@@ -163,12 +163,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="B" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -618.0
 offset_top = 395.0
-offset_right = -543.0
-offset_bottom = 470.0
+offset_right = -548.0
+offset_bottom = 465.0
 focus_mode = 0
 icon = ExtResource("6_f7p2w")
 flat = true
@@ -176,12 +176,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="C" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -778.0
 offset_top = 395.0
-offset_right = -703.0
-offset_bottom = 470.0
+offset_right = -708.0
+offset_bottom = 465.0
 focus_mode = 0
 icon = ExtResource("7_uss7y")
 flat = true
@@ -189,12 +189,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="D" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -858.0
 offset_top = 315.0
-offset_right = -783.0
-offset_bottom = 390.0
+offset_right = -788.0
+offset_bottom = 385.0
 focus_mode = 0
 icon = ExtResource("8_f36fc")
 flat = true
@@ -202,12 +202,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="E" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(65, 65)
 layout_mode = 0
 offset_left = -898.0
 offset_top = 235.0
-offset_right = -823.0
-offset_bottom = 310.0
+offset_right = -828.0
+offset_bottom = 305.0
 focus_mode = 0
 icon = ExtResource("9_isedl")
 flat = true
@@ -215,12 +215,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="F" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -778.0
 offset_top = 315.0
-offset_right = -703.0
-offset_bottom = 390.0
+offset_right = -708.0
+offset_bottom = 385.0
 focus_mode = 0
 icon = ExtResource("10_obdsf")
 flat = true
@@ -228,12 +228,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="G" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -698.0
 offset_top = 315.0
-offset_right = -623.0
-offset_bottom = 390.0
+offset_right = -628.0
+offset_bottom = 385.0
 focus_mode = 0
 icon = ExtResource("11_m2kqo")
 flat = true
@@ -241,12 +241,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="H" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -618.0
 offset_top = 315.0
-offset_right = -543.0
-offset_bottom = 390.0
+offset_right = -548.0
+offset_bottom = 385.0
 focus_mode = 0
 icon = ExtResource("12_p8qqq")
 flat = true
@@ -254,12 +254,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="I" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -498.0
 offset_top = 235.0
-offset_right = -423.0
-offset_bottom = 310.0
+offset_right = -433.0
+offset_bottom = 300.0
 focus_mode = 0
 icon = ExtResource("13_62enl")
 flat = true
@@ -267,12 +267,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="J" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -538.0
 offset_top = 315.0
-offset_right = -463.0
-offset_bottom = 390.0
+offset_right = -468.0
+offset_bottom = 385.0
 focus_mode = 0
 icon = ExtResource("14_ferq6")
 flat = true
@@ -280,12 +280,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="L" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -378.0
 offset_top = 315.0
-offset_right = -303.0
-offset_bottom = 390.0
+offset_right = -308.0
+offset_bottom = 385.0
 focus_mode = 0
 icon = ExtResource("15_e86ls")
 flat = true
@@ -293,12 +293,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="M" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -458.0
 offset_top = 395.0
-offset_right = -383.0
-offset_bottom = 470.0
+offset_right = -388.0
+offset_bottom = 465.0
 focus_mode = 0
 icon = ExtResource("16_vnwhf")
 flat = true
@@ -306,12 +306,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="N" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -538.0
 offset_top = 395.0
-offset_right = -463.0
-offset_bottom = 470.0
+offset_right = -468.0
+offset_bottom = 465.0
 focus_mode = 0
 icon = ExtResource("17_i0iox")
 flat = true
@@ -319,12 +319,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="O" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -418.0
 offset_top = 235.0
-offset_right = -343.0
-offset_bottom = 310.0
+offset_right = -348.0
+offset_bottom = 305.0
 focus_mode = 0
 icon = ExtResource("18_qv8pp")
 flat = true
@@ -332,12 +332,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="P" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -338.0
 offset_top = 235.0
-offset_right = -263.0
-offset_bottom = 310.0
+offset_right = -268.0
+offset_bottom = 305.0
 focus_mode = 0
 icon = ExtResource("19_yhylh")
 flat = true
@@ -345,12 +345,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="Q" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -1058.0
 offset_top = 235.0
-offset_right = -983.0
-offset_bottom = 310.0
+offset_right = -993.0
+offset_bottom = 300.0
 focus_mode = 0
 icon = ExtResource("20_nru7l")
 flat = true
@@ -358,12 +358,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="R" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(65, 65)
 layout_mode = 0
 offset_left = -818.0
 offset_top = 235.0
-offset_right = -743.0
-offset_bottom = 310.0
+offset_right = -748.0
+offset_bottom = 305.0
 focus_mode = 0
 icon = ExtResource("21_8cf0q")
 flat = true
@@ -371,12 +371,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="S" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -938.0
 offset_top = 315.0
-offset_right = -863.0
-offset_bottom = 390.0
+offset_right = -868.0
+offset_bottom = 385.0
 focus_mode = 0
 icon = ExtResource("22_yex56")
 flat = true
@@ -384,12 +384,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="T" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(65, 65)
 layout_mode = 0
 offset_left = -738.0
 offset_top = 235.0
-offset_right = -663.0
-offset_bottom = 310.0
+offset_right = -668.0
+offset_bottom = 305.0
 focus_mode = 0
 icon = ExtResource("23_fud1g")
 flat = true
@@ -397,12 +397,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="U" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -578.0
 offset_top = 235.0
-offset_right = -503.0
-offset_bottom = 310.0
+offset_right = -513.0
+offset_bottom = 300.0
 focus_mode = 0
 icon = ExtResource("24_avysu")
 flat = true
@@ -410,12 +410,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="V" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -698.0
 offset_top = 395.0
-offset_right = -623.0
-offset_bottom = 470.0
+offset_right = -628.0
+offset_bottom = 465.0
 focus_mode = 0
 icon = ExtResource("25_mq4gg")
 flat = true
@@ -423,12 +423,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="K" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -458.0
 offset_top = 315.0
-offset_right = -383.0
-offset_bottom = 390.0
+offset_right = -388.0
+offset_bottom = 385.0
 focus_mode = 0
 icon = ExtResource("27_toop0")
 flat = true
@@ -436,12 +436,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="W" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -978.0
 offset_top = 235.0
-offset_right = -903.0
-offset_bottom = 310.0
+offset_right = -913.0
+offset_bottom = 300.0
 focus_mode = 0
 icon = ExtResource("28_k5ttn")
 flat = true
@@ -449,12 +449,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="Y" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -658.0
 offset_top = 235.0
-offset_right = -583.0
-offset_bottom = 310.0
+offset_right = -593.0
+offset_bottom = 300.0
 focus_mode = 0
 icon = ExtResource("29_t5wpc")
 flat = true
@@ -462,12 +462,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="Z" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -938.0
 offset_top = 395.0
-offset_right = -863.0
-offset_bottom = 470.0
+offset_right = -868.0
+offset_bottom = 465.0
 focus_mode = 0
 icon = ExtResource("30_631hs")
 flat = true
@@ -475,12 +475,12 @@ expand_icon = true
 script = ExtResource("3_s6wji")
 
 [node name="X" type="Button" parent="Control/Letras"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -858.0
 offset_top = 395.0
-offset_right = -783.0
-offset_bottom = 470.0
+offset_right = -788.0
+offset_bottom = 465.0
 focus_mode = 0
 icon = ExtResource("31_fwf74")
 flat = true

@@ -10,7 +10,7 @@ func spawn_keys(word_list) -> void:
 	var idx # variável que receberá os indíces gerados aleatoriamente
 	var letter_name
 	var letter_node
-	var x = 175
+	var x = 204
 	var y = 370
 	var letters_parent_path = "/root/Node2D/Control/Letras/"
 	rng.randomize()
@@ -36,12 +36,12 @@ func spawn_keys(word_list) -> void:
 	key_list.shuffle()
 	
 	for l in key_list: # Posicionamento das letras disponíveis
-		if x == 975:
-			x = 175
-			y += 80
+		if x == 954:
+			x = 204
+			y += 75
 		l.position = Vector2(x, y)
 		l.original_position = l.position
-		x += 80
+		x += 75
 		
 
 # Called when the node enters the scene tree for the first time.

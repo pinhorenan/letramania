@@ -48,7 +48,7 @@ var sixl_words = [
 ]
 
 func set_gaps(array_size: int) -> void:
-	var x = 110
+	var x = 120
 	var y_positions = [80, 180, 80, 180]  # Posições Y para cada linha
 	var image_offset = Vector2(-40, -50)  # Ajuste de posição da imagem
 	var words
@@ -81,7 +81,7 @@ func set_gaps(array_size: int) -> void:
 				5:
 					x += 620
 				_:
-					x += 540
+					x += 560
 		var word_data = words[selected_indices[i]]
 		var word_str = word_data["word"]
 		
@@ -101,7 +101,7 @@ func set_gaps(array_size: int) -> void:
 			var draggable = get_node("Arrastável").duplicate()
 			selected_words[i]["letters"].append([draggable, word_str[n]])
 			add_child(draggable)
-			draggable.position = Vector2(x + (n * 80), y_positions[i])
+			draggable.position = Vector2(x + (n * 75), y_positions[i])
 
 func verify_gaps() ->bool:
 	var completed = true
@@ -114,5 +114,4 @@ func verify_gaps() ->bool:
 	return completed
 
 func _ready() -> void:
-	#var completed = false
 	set_gaps(Jogo.word_size)
