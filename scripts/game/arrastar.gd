@@ -112,7 +112,6 @@ func _gui_input(event: InputEvent) -> void:
 						Jogo.vidas -= 1
 						
 					if Jogo.vidas < 0:
-						Jogo.vidas = Configuracoes.config["vidas"]
 						get_tree().change_scene_to_file("res://scenes/menu.tscn") # provavelmente temporário, talvez seja interessante fazer uma tela de game over
 					root_node.atualizar_ui_vidas()
 					

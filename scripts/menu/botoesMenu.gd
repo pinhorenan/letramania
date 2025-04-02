@@ -11,10 +11,13 @@ var texture_pressed
 func _ready() -> void:
 	ajustar_background()
 	musica = AudioServer.get_bus_index(bus_name)
-	if Jogo.word_size == 6:
+	if Jogo.word_size == 6 and Jogo.vidas >= 0:
 		$Iniciar.texture_normal = preload("res://recursos/parabenizacao/Botões/InicioBase.png")
 		$Iniciar.texture_hover = preload("res://recursos/parabenizacao/Botões/InicioHighlight.png")
 		$Iniciar.texture_pressed = preload("res://recursos/parabenizacao/Botões/InicioPressed.png")
+	if Jogo.vidas < 0:
+		Jogo.word_size = 3
+		Jogo.vidas = Configuracoes.config["vidas"]
 func ajustar_background():
 	if background and background.texture:
 		background.size = get_viewport_rect().size
