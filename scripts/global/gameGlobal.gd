@@ -118,31 +118,38 @@ func get_time():
 func salvar_dados_no_csv():
 	time_end = get_time()
 	var linhas = []
-	var id: int
+	var id: int = 1  # ID inicial caso o arquivo não exista
 	var erros_area_invalida: int = erros - erro_escolha - erro_posicao
-	total_idle_time = total_idle_time / 1000
-	total_idle_time1 = total_idle_time1 / 1000
-	total_idle_time2 = total_idle_time2 / 1000
-	total_idle_time3 = total_idle_time3 / 1000
+
+	# Converter tempos para segundos
+	total_idle_time /= 1000
+	total_idle_time1 /= 1000
+	total_idle_time2 /= 1000
+	total_idle_time3 /= 1000
+	
 	calcular_media()
-	
-	var pasta_destino = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)  # Pasta acessível via USB
+
+	# Caminho acessível no Android (Downloads)
+	var pasta_destino = "/storage/emulated/0/Download"
 	var caminho_arquivo = pasta_destino + "/dados_partidas.csv"
-	
-	# Verifica se o arquivo já existe
-	if FileAccess.file_exists(FILE_PATH):
-		var file = FileAccess.open(FILE_PATH, FileAccess.READ)
-		if file: 
+
+	# Verifica se o arquivo existe
+	if FileAccess.file_exists(caminho_arquivo):
+		var file = FileAccess.open(caminho_arquivo, FileAccess.READ)
+		if file:
 			while not file.eof_reached():
 				var line = file.get_line()
 				if line != "":
 					linhas.append(line)
-			if linhas.size() > 1:  # Garante que tem dados além do cabeçalho
-				var last_line = linhas[-1].split(",")  # Separa os valores da última linha
-				id = int(last_line[0]) + 1  # Incrementa o ID
+
+			# Incrementar o ID a partir da última linha
+			if linhas.size() > 1:
+				var last_line = linhas[-1].split(",")  
+				id = int(last_line[0]) + 1  
+
 			file.close()
 		else:
-			push_error("Erro ao abrir arquivo")
+			push_error("Erro ao abrir o arquivo")
 
 	# Adiciona o cabeçalho se o arquivo estava vazio
 	if linhas.is_empty():
@@ -150,10 +157,11 @@ func salvar_dados_no_csv():
 	# Adiciona os novos dados
 	linhas.append(str(id) + "," + str(completo) + "," + str(time_start) + "," + str(time_end) + "," + "%.2f" % tempo_decorrido + "," + str(letras_selecionadas) + "," + str(acertos) + "," + str(erros) + "," + str(erro_escolha) + "," + str(erro_posicao) + "," + str(erros_area_invalida) + "," + "%.2f" % total_idle_time + "," + str(pontuacao) + ","  + "%.2f" % tempo1 + "," + "%.2f" % total_idle_time1 + ","  + str(acertos1) + ","  + str(erros1) + ","  + str(erro_escolha1) + "," + str(erro_posicao1) + "," + str(pontos1) + "," + "%.2f" % tempo2 + "," + "%.2f" % total_idle_time2 + ","  + str(acertos2) + ","  + str(erros2) + ","  + str(erro_escolha2) + "," + str(erro_posicao2) + "," + str(pontos2) + "," + "%.2f" % tempo3 + "," + "%.2f" % total_idle_time3 + ","  + str(acertos3) + ","  + str(erros3) + ","  + str(erro_escolha3) + "," + str(erro_posicao3) + "," + str(pontos3) + "," + "%.2f" % media_letra + "," + "%.2f" % media_letra_certa)
 	# Salva tudo novamente no arquivo
-	var file = FileAccess.open(FILE_PATH, FileAccess.WRITE)
+	var file = FileAccess.open(caminho_arquivo, FileAccess.WRITE)
 	if file:
 		for line in linhas:
 			file.store_line(line)
-		print("Dados salvos no arquivo CSV.")
+		file.close()
+		print("✅ Dados salvos em: " + caminho_arquivo)
 	else:
-		print("Erro")
+		push_error("❌ Erro ao salvar o arquivo!")
