@@ -1,3 +1,3 @@
-# DS-Grupo-6
+# LetraMania
 Projeto desenvolvido para a disciplina de Desenvolvimento de Softwares
 Forma Palavra!
