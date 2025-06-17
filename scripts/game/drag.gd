@@ -1,19 +1,24 @@
 extends Button
 
-var is_dragging := false
+const tip_time_trigger = 20000
+const tip_timeout = 3000
+
 var offset := Vector2()
 var original_position := Vector2()
 var current_snap_area: Node = null
 var current_snap_area_letter
-var is_snapped := false  # Indica se a letra está encaixada
-var letter_name
+
+var is_dragging := false
+var is_snapped := false
+var is_tipping := false
 var completed = false
-@onready var lacunas = get_node("/root/Node2D/Control/Lacunas")
+
 var last_release_time := 0  
 var idle_time := 0  
-var tip_timeout = 3000
-@onready var keyboard = get_node("/root/Node2D/Control/Letras")
+var letter_name
 
+@onready var slots = get_node("/root/Node2D/Control/Lacunas")
+@onready var keyboard = get_node("/root/Node2D/Control/Letras")
 @onready var erro = get_node("/root/Node2D/Control/Errado")
 @onready var certo = get_node("/root/Node2D/Control/Correto")
 
@@ -21,14 +26,14 @@ func is_idle():
 	if not completed:
 		var current_time = Time.get_ticks_msec()
 		var elapsed_time = current_time - Jogo.aux_time
-		if elapsed_time > 2000	: # 20 segundos de inatividade para mostrar dica
+		if elapsed_time > tip_time_trigger:
 			game_tips()
 			Jogo.aux_time = current_time
 
 func game_tips():
-	Jogo.cancelar_dica_em_andamento = false
+	is_tipping = true
 	var word_complete
-	for word in lacunas.selected_words:
+	for word in slots.selected_words:
 		var letters = word["letters"]
 		word_complete = true 
 		for current_letter in letters:
@@ -42,7 +47,7 @@ func game_tips():
 					var end_time = Time.get_ticks_msec() + tip_timeout
 										
 					while Time.get_ticks_msec() < end_time:
-						if Jogo.cancelar_dica_em_andamento: # flag global nova p/ evitar que outras instancias da mesma letra continuem a piscar por uns segundos após colocar a letra certa.... talvez tenha um jeito melhor de fazer mas é isso guys
+						if !is_tipping:
 							keyboard.tip_letter(current_letter[1], 0)
 							return
 						current_letter[0].color = "green"
@@ -88,18 +93,18 @@ func _gui_input(event: InputEvent) -> void:
 					new_button.position = current_snap_area.global_position - get_parent().global_position
 					get_parent().add_child(new_button)
 					new_button.is_snapped = true
-					Jogo.cancelar_dica_em_andamento = true
+					is_tipping = false
 					Jogo.add_acertos()
 					
 					# Adiciona a pontuação conforme a ocorrência de erro ou não na palavra
-					for word in lacunas.selected_words:
+					for word in slots.selected_words:
 						for letters in word["letters"]:
 							if letters[0].get_global_rect().has_point(get_global_mouse_position()): # Verificar a letra atual, para saber qual a palavra atual
 								Jogo.pontuacao += word["letter_value"]
 								root_node.atualizar_ui_pontos()
 								break
 					queue_free() # remove a letra do "teclado".
-					completed = lacunas.verify_gaps()
+					completed = slots.verify_gaps()
 					if completed:
 						root_node.parar_temporizador() # Sim. Se possível eu arrumo depois
 						if Jogo.word_size < 6:
@@ -121,7 +126,7 @@ func _gui_input(event: InputEvent) -> void:
 					
 					var palavra_errada = null
 					# Encontrar a palavra correspondente à lacuna onde a letra foi solta
-					for palavra_atual in lacunas.selected_words:
+					for palavra_atual in slots.selected_words:
 						for letra_posicao in palavra_atual["letters"]:
 							if letra_posicao[0] == current_snap_area:
 								palavra_errada = palavra_atual["letters"]
@@ -155,7 +160,7 @@ func _gui_input(event: InputEvent) -> void:
 
 func check_snap_area(): 
 	current_snap_area = null
-	for word in lacunas.selected_words: # Cada palavra
+	for word in slots.selected_words: # Cada palavra
 		var letters = word["letters"]
 		for current_letter in letters: 
 			if not current_letter[0].is_occupied:
@@ -184,7 +189,7 @@ func verify_type_error(letter_name: String, word: Array):
 		
 func already_missed():
 	var missed = true
-	for word in lacunas.selected_words:
+	for word in slots.selected_words:
 		for letters in word["letters"]:
 			if letters[0].get_global_rect().has_point(get_global_mouse_position()): # Verificar a letra atual, para saber qual a palavra atual
 				if word["miss"] == false: # Se não houve nenhum outro erro na palavra

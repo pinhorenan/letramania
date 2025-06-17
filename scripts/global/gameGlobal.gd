@@ -5,8 +5,6 @@ const FILE_PATH = "user://dados_partidas.csv"
 var word_size = 3
 var tempo_decorrido: float = 0.0
 
-var cancelar_dica_em_andamento = false
-
 var acertos = 0
 var erros = 0
 var erro_posicao = 0
