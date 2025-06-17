@@ -1,41 +1,41 @@
 extends Control
 
+var outline_shader := preload("res://shaders/outline.gdshader")
 var alphabet = ["A","B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q",
-"R", "S", "T", "U", "V", "W", "X", "Y", "Z"] # Provavelmente há solução melhor mas vai ser isso por enquanto.
+"R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var key_list = []
 var tip_timeout = 3000
 
 func spawn_keys(word_list) -> void:
 	var rng = RandomNumberGenerator.new();
-	var idx # variável que receberá os indíces gerados aleatoriamente
-	var letter_name
-	var letter_node
-	var x = 204
-	var y = 370
-	var letters_parent_path = "/root/Node2D/Control/Letras/"
 	rng.randomize()
-	
+
+	# adiciona as letras necessárias p/ palavras chaves
 	for word in word_list:
-		var letters = word["letters"]
-		for l in letters: # fazendo a busca de cada letra em cada palavra
-			letter_name = l[1]
-			letter_node = get_node(letters_parent_path + letter_name).duplicate()
+		for l in word["letters"]:
+			var letter_name = l[1]
+			var template = get_node(letter_name)
+			var letter_node = template.duplicate()
 			add_child(letter_node)
 			letter_node.letter_name = letter_name
-			key_list.append(letter_node) # adicionando à lista de letras do teclado que será gerado futuramente
+			key_list.append(letter_node)
 
-	while len(key_list) != 30: # NOTA: Do jeito que está, existe uma chance (bem pequena) de criar cenários estranhos onde, por exemplo, uma única letra se repetiria por todas as opções
-		idx = rng.randi_range(0, 25)
-		letter_name = alphabet[idx]
-		letter_node = get_node(letters_parent_path + letter_name).duplicate()
+	# completa com outras letras aleatórias
+	while key_list.size() < 30:
+		var idx = rng.randi_range(0, alphabet.size() - 1)
+		var letter_name = alphabet[idx]
+		var template = get_node(letter_name)
+		var letter_node = template.duplicate()
 		add_child(letter_node)
 		letter_node.letter_name = letter_name
-		key_list.append(letter_node) # adicionando letras aleatórias
-
+		key_list.append(letter_node)
 		
 	key_list.shuffle()
 	
-	for l in key_list: # Posicionamento das letras disponíveis
+	# posiciona no grid
+	var x = 204
+	var y = 370
+	for l in key_list:
 		if x == 954:
 			x = 204
 			y += 75
@@ -43,35 +43,24 @@ func spawn_keys(word_list) -> void:
 		l.original_position = l.position
 		x += 75
 		
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#pass # Replace with function body.
 	var lacunas = get_node("/root/Node2D/Control/Lacunas")
 	spawn_keys(lacunas.selected_words)
-
-func tip_letter(letter, type):
+	
+func tip_letter(letter: String, type: int) -> void:
 	for key in key_list:
-		if is_instance_valid(key) && key.letter_name == letter:
-			var path = "res://recursos/letras/" + letter.to_lower() 
+		if is_instance_valid(key) and key.letter_name == letter:
 			if type == 1:
-				var overlay = key.get_node_or_null("TipOverlay")
-				if not overlay:
-					overlay = TextureRect.new()
-					overlay.name = "TipOverlay"
-					overlay.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-					overlay.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-					overlay.size = key.size
-					key.add_child(overlay)
-				
-				var new_texture = load("res://recursos/letras/img_tip.png")
-				overlay.texture = new_texture
-				overlay.show()
+				# aplica material shader de bordinhas verdes <3
+				var mat := ShaderMaterial.new()
+				mat.shader = outline_shader
+				key.material = mat
 			else:
-				var overlay = key.get_node_or_null("TipOverlay")
-				if overlay:
-					overlay.hide()
-			break  
+				# nao
+				key.material = null
+			break
 			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

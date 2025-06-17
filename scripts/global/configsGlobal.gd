@@ -61,7 +61,7 @@ func carregar_todas_configuracoes():
 	# Aplica configurações de áudio
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Musica"), not is_music_on)
 
-# --------------------------- Interface Pública ---------------------------
+# --------------------------- Interface Pública --------"res://scripts/global/configsGlobal.gd"-------------------
 func atualizar_config_jogo(chave: String, valor):
 	config[chave] = valor
 	salvar_todas_configuracoes()

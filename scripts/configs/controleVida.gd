@@ -23,7 +23,7 @@ func _ready():
 
 	# Configurações do Label (Godot 4)
 	var label_settings = LabelSettings.new()
-	var fonte = load("res://recursos/musicas e fontes/Gilroy-Bold.ttf")
+	var fonte = load("res://assets/musicas e fontes/Gilroy-Bold.ttf")
 	label_settings.font = fonte
 	label_settings.font_size = 40
 	label_settings.font_color = Color.BLACK

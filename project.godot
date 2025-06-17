@@ -13,7 +13,7 @@ config_version=5
 config/name="Letra Mania"
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://recursos/letras/l.png"
+config/icon="res://assets/letras/l.png"
 
 [audio]
 

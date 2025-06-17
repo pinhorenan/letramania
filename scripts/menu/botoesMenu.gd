@@ -12,9 +12,9 @@ func _ready() -> void:
 	ajustar_background()
 	musica = AudioServer.get_bus_index(bus_name)
 	if Jogo.word_size == 6 and Jogo.vidas >= 0:
-		$Iniciar.texture_normal = preload("res://recursos/parabenizacao/Botões/InicioBase.png")
-		$Iniciar.texture_hover = preload("res://recursos/parabenizacao/Botões/InicioHighlight.png")
-		$Iniciar.texture_pressed = preload("res://recursos/parabenizacao/Botões/InicioPressed.png")
+		$Iniciar.texture_normal = preload("res://assets/parabenizacao/Botões/InicioBase.png")
+		$Iniciar.texture_hover = preload("res://assets/parabenizacao/Botões/InicioHighlight.png")
+		$Iniciar.texture_pressed = preload("res://assets/parabenizacao/Botões/InicioPressed.png")
 	if Jogo.vidas < 0:
 		Jogo.word_size = 3
 		Jogo.vidas = Configuracoes.config["vidas"]

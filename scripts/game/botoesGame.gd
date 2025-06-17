@@ -14,7 +14,7 @@ var temporizador_ligado: bool = false
 func _ready():
 	# ESTILIZAÇÃO DO CONFIRMATIONDIALOGE
 	var theme = Theme.new()
-	var font = load("res://recursos/musicas e fontes/Gilroy-Black.ttf")
+	var font = load("res://assets/musicas e fontes/Gilroy-Black.ttf")
 	var font_size = 24
 	var label_settings = LabelSettings.new()
 	label_settings.font = font
@@ -74,7 +74,7 @@ func _ready():
 	
 	# AJUSTES PRAS LABELS
 	var label_configs = LabelSettings.new()
-	var fonte = load("res://recursos/musicas e fontes/Gilroy-Bold.ttf")
+	var fonte = load("res://assets/musicas e fontes/Gilroy-Bold.ttf")
 	label_configs.font = fonte
 	label_configs.font_size = 24
 	label_configs.font_color = Color.BLACK
