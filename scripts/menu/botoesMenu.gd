@@ -7,6 +7,7 @@ var musica: int
 var texture_normal
 var texture_highlight
 var texture_pressed
+var next_scene
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ajustar_background()
@@ -34,14 +35,18 @@ func _on_musga_on_off_pressed() -> void:
 
 func _on_iniciar_pressed() -> void:
 	botao_click.play()
-	Jogo.word_size += 1
 	if Jogo.word_size < 7:
-		get_tree().change_scene_to_file("res://scenes/game.tscn")
+		Jogo.word_size += 1
+		next_scene = "res://scenes/game.tscn"
 	else:
-		Jogo.word_size = 3 # Voltando para a primeira fase
+		if Jogo.word_size == 7:
+			next_scene = "res://scenes/game.tscn"
+		else:
+			next_scene = "res://scenes/menu.tscn"
+		Jogo.word_size = 4 # Voltando para a primeira fase
 		Jogo.tempo_decorrido = 0.0 # Resetando temporizador
 		Jogo.vidas = Configuracoes.config["vidas"]
-		get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	get_tree().change_scene_to_file(next_scene)
 
 
 func _on_configuraçoes_pressed() -> void:

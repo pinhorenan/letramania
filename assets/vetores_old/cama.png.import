@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bf2vujgqlg8pg"
-path="res://.godot/imported/cama.png-fd5a9126e9ffcf9e90f43b26ab191a6f.ctex"
+path="res://.godot/imported/cama.png-c9274349feec1e14b4bcf14c37fdacc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores/cama.png"
-dest_files=["res://.godot/imported/cama.png-fd5a9126e9ffcf9e90f43b26ab191a6f.ctex"]
+source_file="res://assets/vetores_old/cama.png"
+dest_files=["res://.godot/imported/cama.png-c9274349feec1e14b4bcf14c37fdacc9.ctex"]
 
 [params]
 

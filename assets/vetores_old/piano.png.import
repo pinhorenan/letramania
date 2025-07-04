@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5w5gmwgbe1a3"
-path="res://.godot/imported/piano.png-e0e0a0d8f3504297e55a0a0ee0254f84.ctex"
+path="res://.godot/imported/piano.png-774008abe6a0448cff7cebd158f552f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores/piano.png"
-dest_files=["res://.godot/imported/piano.png-e0e0a0d8f3504297e55a0a0ee0254f84.ctex"]
+source_file="res://assets/vetores_old/piano.png"
+dest_files=["res://.godot/imported/piano.png-774008abe6a0448cff7cebd158f552f8.ctex"]
 
 [params]
 

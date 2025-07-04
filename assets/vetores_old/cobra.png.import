@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3jcfe74bptw5"
-path="res://.godot/imported/cobra.png-351cb89e91bbef3b8a9d55526adc2ede.ctex"
+path="res://.godot/imported/cobra.png-5a77ad5d95c64831b3bba2c6312bc23b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores/cobra.png"
-dest_files=["res://.godot/imported/cobra.png-351cb89e91bbef3b8a9d55526adc2ede.ctex"]
+source_file="res://assets/vetores_old/cobra.png"
+dest_files=["res://.godot/imported/cobra.png-5a77ad5d95c64831b3bba2c6312bc23b.ctex"]
 
 [params]
 

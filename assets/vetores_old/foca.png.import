@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3ymbrrnx2sh4"
-path="res://.godot/imported/foca.png-0d02e764e114ebd30ca61f3a6d7807a3.ctex"
+path="res://.godot/imported/foca.png-a4fae8135040d2d60b93ace8268318f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores/foca.png"
-dest_files=["res://.godot/imported/foca.png-0d02e764e114ebd30ca61f3a6d7807a3.ctex"]
+source_file="res://assets/vetores_old/foca.png"
+dest_files=["res://.godot/imported/foca.png-a4fae8135040d2d60b93ace8268318f9.ctex"]
 
 [params]
 

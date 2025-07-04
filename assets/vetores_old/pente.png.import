@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bn561i46t580g"
-path="res://.godot/imported/pente.png-56ca102cbe30a52e5bc5d9c0c4ea2c66.ctex"
+path="res://.godot/imported/pente.png-ec8f8344873ef3f873540446ff46232f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores/pente.png"
-dest_files=["res://.godot/imported/pente.png-56ca102cbe30a52e5bc5d9c0c4ea2c66.ctex"]
+source_file="res://assets/vetores_old/pente.png"
+dest_files=["res://.godot/imported/pente.png-ec8f8344873ef3f873540446ff46232f.ctex"]
 
 [params]
 

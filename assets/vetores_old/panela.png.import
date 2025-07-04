@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0ex05khjegmu"
-path="res://.godot/imported/panela.png-44fe2d11bd646a66f415c0e41292e1ad.ctex"
+path="res://.godot/imported/panela.png-e06096b495144bf9181ac6248721798d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores/panela.png"
-dest_files=["res://.godot/imported/panela.png-44fe2d11bd646a66f415c0e41292e1ad.ctex"]
+source_file="res://assets/vetores_old/panela.png"
+dest_files=["res://.godot/imported/panela.png-e06096b495144bf9181ac6248721798d.ctex"]
 
 [params]
 

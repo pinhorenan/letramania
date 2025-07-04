@@ -1,8 +1,8 @@
 extends Button
 
-const tip_time_trigger = 20000
 const tip_timeout = 3000
 
+var tip_time_trigger = (Configuracoes.config.nivel_de_dica * 1000) # 10000, 20000 ou 30000
 var offset := Vector2()
 var original_position := Vector2()
 var current_snap_area: Node = null
@@ -117,7 +117,7 @@ func _gui_input(event: InputEvent) -> void:
 						else:
 							Jogo.set_inatividade_fase3()
 							Jogo.completo = "SIM"
-							Jogo.salvar_dados_no_csv()
+							#Jogo.salvar_dados_no_csv()
 						get_tree().change_scene_to_file("res://scenes/prox_fase.tscn")
 				else:
 					Jogo.add_erros()

@@ -146,7 +146,7 @@ func _on_voltar_pressed() -> void:
 		Jogo.set_inatividade_fase2()
 	Jogo.completo = "INTERROMPIDO"
 	Jogo.salvar_dados_no_csv()
-	Jogo.word_size = 3
+	Jogo.word_size = 7 # Gambiarra de última hora
 	# Pausa apenas a física e lógica do jogo, mantendo a UI ativa
 	get_tree().paused = true
 	# Mantém o diálogo processando input mesmo com o jogo pausado

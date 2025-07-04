@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpb1jolkuemag"
-path="res://.godot/imported/zebra.png-25965be967949e9d62ad1ce78bf8210e.ctex"
+path="res://.godot/imported/zebra.png-2c1cf0f0fce15d7db76070c8db182959.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores/zebra.png"
-dest_files=["res://.godot/imported/zebra.png-25965be967949e9d62ad1ce78bf8210e.ctex"]
+source_file="res://assets/vetores_old/zebra.png"
+dest_files=["res://.godot/imported/zebra.png-2c1cf0f0fce15d7db76070c8db182959.ctex"]
 
 [params]
 

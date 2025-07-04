@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dn4kn2j7spga8"
-path="res://.godot/imported/boneca.png-51829102d0cfadf3f2476e231552038f.ctex"
+path="res://.godot/imported/boneca.png-df2c3696066c6f50dc988dcafe266bfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores/boneca.png"
-dest_files=["res://.godot/imported/boneca.png-51829102d0cfadf3f2476e231552038f.ctex"]
+source_file="res://assets/vetores_old/boneca.png"
+dest_files=["res://.godot/imported/boneca.png-df2c3696066c6f50dc988dcafe266bfc.ctex"]
 
 [params]
 

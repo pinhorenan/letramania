@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://chn6lpwadem1w"
+path="res://.godot/imported/BOO.mp3-0e8e15abdaaa828be0a68b55ace8e2a7.mp3str"
+
+[deps]
+
+source_file="res://assets/musicas e fontes/BOO.mp3"
+dest_files=["res://.godot/imported/BOO.mp3-0e8e15abdaaa828be0a68b55ace8e2a7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

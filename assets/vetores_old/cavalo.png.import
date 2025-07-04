@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://sf27tww2231m"
-path="res://.godot/imported/cavalo.png-9412ba3df6856b7e32a496974e3d8c42.ctex"
+path="res://.godot/imported/cavalo.png-55d5701c2fd204b55709d4128837df6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores/cavalo.png"
-dest_files=["res://.godot/imported/cavalo.png-9412ba3df6856b7e32a496974e3d8c42.ctex"]
+source_file="res://assets/vetores_old/cavalo.png"
+dest_files=["res://.godot/imported/cavalo.png-55d5701c2fd204b55709d4128837df6d.ctex"]
 
 [params]
 

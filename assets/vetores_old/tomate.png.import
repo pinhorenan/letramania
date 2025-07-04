@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cffcounbf5dxf"
-path="res://.godot/imported/tomate.png-0490aa13e32ba916a9e60ff8c4e10e11.ctex"
+path="res://.godot/imported/tomate.png-4b158b15816496491ab4a4480f4916b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores/tomate.png"
-dest_files=["res://.godot/imported/tomate.png-0490aa13e32ba916a9e60ff8c4e10e11.ctex"]
+source_file="res://assets/vetores_old/tomate.png"
+dest_files=["res://.godot/imported/tomate.png-4b158b15816496491ab4a4480f4916b7.ctex"]
 
 [params]
 

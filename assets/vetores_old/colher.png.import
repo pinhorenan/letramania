@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chpf8j3bojei8"
-path="res://.godot/imported/colher.png-5f6d8ddd4eb8fae99f6c05008977ba86.ctex"
+path="res://.godot/imported/colher.png-d194dabc67feb2bdb38f284bce8027d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores/colher.png"
-dest_files=["res://.godot/imported/colher.png-5f6d8ddd4eb8fae99f6c05008977ba86.ctex"]
+source_file="res://assets/vetores_old/colher.png"
+dest_files=["res://.godot/imported/colher.png-d194dabc67feb2bdb38f284bce8027d4.ctex"]
 
 [params]
 

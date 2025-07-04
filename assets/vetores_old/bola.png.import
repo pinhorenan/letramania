@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cp2kkopc0awlq"
-path="res://.godot/imported/bola.png-8f1426abbb9eb68df061d6fb9c64976c.ctex"
+path="res://.godot/imported/bola.png-c7fd3e5a09a14ed5939255d61bc2898a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores/bola.png"
-dest_files=["res://.godot/imported/bola.png-8f1426abbb9eb68df061d6fb9c64976c.ctex"]
+source_file="res://assets/vetores_old/bola.png"
+dest_files=["res://.godot/imported/bola.png-c7fd3e5a09a14ed5939255d61bc2898a.ctex"]
 
 [params]
 

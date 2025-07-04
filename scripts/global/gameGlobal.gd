@@ -2,6 +2,7 @@ extends Node2D
 
 const FILE_PATH = "user://dados_partidas.csv"
 #var is_dragging = false
+var file
 var word_size = 3
 var tempo_decorrido: float = 0.0
 
@@ -135,7 +136,7 @@ func salvar_dados_no_csv():
 
 	# Verifica se o arquivo existe
 	if FileAccess.file_exists(caminho_arquivo):
-		var file = FileAccess.open(caminho_arquivo, FileAccess.READ)
+		file = FileAccess.open(caminho_arquivo, FileAccess.READ)
 		if file:
 			while not file.eof_reached():
 				var line = file.get_line()
@@ -157,7 +158,7 @@ func salvar_dados_no_csv():
 	# Adiciona os novos dados
 	linhas.append(str(id) + "," + str(completo) + "," + str(time_start) + "," + str(time_end) + "," + "%.2f" % tempo_decorrido + "," + str(letras_selecionadas) + "," + str(acertos) + "," + str(erros) + "," + str(erro_escolha) + "," + str(erro_posicao) + "," + str(erros_area_invalida) + "," + "%.2f" % total_idle_time + "," + str(pontuacao) + ","  + "%.2f" % tempo1 + "," + "%.2f" % total_idle_time1 + ","  + str(acertos1) + ","  + str(erros1) + ","  + str(erro_escolha1) + "," + str(erro_posicao1) + "," + str(pontos1) + "," + "%.2f" % tempo2 + "," + "%.2f" % total_idle_time2 + ","  + str(acertos2) + ","  + str(erros2) + ","  + str(erro_escolha2) + "," + str(erro_posicao2) + "," + str(pontos2) + "," + "%.2f" % tempo3 + "," + "%.2f" % total_idle_time3 + ","  + str(acertos3) + ","  + str(erros3) + ","  + str(erro_escolha3) + "," + str(erro_posicao3) + "," + str(pontos3) + "," + "%.2f" % media_letra + "," + "%.2f" % media_letra_certa)
 	# Salva tudo novamente no arquivo
-	var file = FileAccess.open(caminho_arquivo, FileAccess.WRITE)
+	file = FileAccess.open(caminho_arquivo, FileAccess.WRITE)
 	if file:
 		for line in linhas:
 			file.store_line(line)

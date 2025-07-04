@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqix54ljcpyt6"
-path="res://.godot/imported/urso.png-01a4b067df6ab5e1c4f91c9dc5250498.ctex"
+path="res://.godot/imported/urso.png-90a0c4ca4d6e26581dc26c6be8e6bf90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores/urso.png"
-dest_files=["res://.godot/imported/urso.png-01a4b067df6ab5e1c4f91c9dc5250498.ctex"]
+source_file="res://assets/vetores_old/urso.png"
+dest_files=["res://.godot/imported/urso.png-90a0c4ca4d6e26581dc26c6be8e6bf90.ctex"]
 
 [params]
 

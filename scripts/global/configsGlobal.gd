@@ -7,7 +7,8 @@ var config = {
 	"vidas": 3,
 	"pontuacao": 0,
 	"pontuacao_ativada": true,
-	"temporizador_ativado": true
+	"temporizador_ativado": true,
+	"nivel_de_dica": 20
 }
 
 signal music_state_changed(is_on)
@@ -33,6 +34,7 @@ func salvar_todas_configuracoes():
 	config_file.set_value("jogo", "vidas", config.vidas)
 	config_file.set_value("jogo", "pontuacao_ativada", config.pontuacao_ativada)
 	config_file.set_value("jogo", "temporizador_ativado", config.temporizador_ativado)
+	config_file.set_value("jogo", "nivel_de_dica", config.nivel_de_dica)
 	
 	var erro = config_file.save(config_path)
 	if erro != OK:
@@ -50,6 +52,7 @@ func carregar_todas_configuracoes():
 		config.vidas = config_file.get_value("jogo", "vidas", 3)
 		config.pontuacao_ativada = config_file.get_value("jogo", "pontuacao_ativada", true)
 		config.temporizador_ativado = config_file.get_value("jogo", "temporizador_ativado", true)
+		config.nivel_de_dica = config_file.get_value("jogo", "nivel_de_dica", 20)
 		
 		# Força tipos booleanos
 		config.pontuacao_ativada = bool(config.pontuacao_ativada)

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://m12thx1h5gwv"
-path="res://.godot/imported/lapis.png-671a632fc13dd2e416c622b17765efdc.ctex"
+path="res://.godot/imported/lapis.png-24e5c8b3ab242f218a581e2e66e50a23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores/lapis.png"
-dest_files=["res://.godot/imported/lapis.png-671a632fc13dd2e416c622b17765efdc.ctex"]
+source_file="res://assets/vetores_old/lapis.png"
+dest_files=["res://.godot/imported/lapis.png-24e5c8b3ab242f218a581e2e66e50a23.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2m7xxvfvfc0d"
-path="res://.godot/imported/rato.png-6ca03c078614bb9ef768ea991686dc49.ctex"
+path="res://.godot/imported/rato.png-cf862c666713b8cb86025442f091b75d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores/rato.png"
-dest_files=["res://.godot/imported/rato.png-6ca03c078614bb9ef768ea991686dc49.ctex"]
+source_file="res://assets/vetores_old/rato.png"
+dest_files=["res://.godot/imported/rato.png-cf862c666713b8cb86025442f091b75d.ctex"]
 
 [params]
 

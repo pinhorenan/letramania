@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://phn68lwm1hru"
-path="res://.godot/imported/livro.png-18d03e0c0e9c160b4fb38f790f4d383d.ctex"
+path="res://.godot/imported/livro.png-0264621f0d346c0beab07347fdb57de4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores/livro.png"
-dest_files=["res://.godot/imported/livro.png-18d03e0c0e9c160b4fb38f790f4d383d.ctex"]
+source_file="res://assets/vetores_old/livro.png"
+dest_files=["res://.godot/imported/livro.png-0264621f0d346c0beab07347fdb57de4.ctex"]
 
 [params]
 
