@@ -16,8 +16,9 @@ func _ready() -> void:
 		$Iniciar.texture_normal = preload("res://assets/parabenizacao/Botões/InicioBase.png")
 		$Iniciar.texture_hover = preload("res://assets/parabenizacao/Botões/InicioHighlight.png")
 		$Iniciar.texture_pressed = preload("res://assets/parabenizacao/Botões/InicioPressed.png")
-	if Jogo.vidas < 0:
+	elif Jogo.vidas < 0:
 		Jogo.word_size = 3
+		Jogo.tempo_decorrido = 0.0
 		Jogo.vidas = Configuracoes.config["vidas"]
 func ajustar_background():
 	if background and background.texture:
@@ -35,17 +36,16 @@ func _on_musga_on_off_pressed() -> void:
 
 func _on_iniciar_pressed() -> void:
 	botao_click.play()
-	if Jogo.word_size < 7:
+	if Jogo.word_size < 6:
 		Jogo.word_size += 1
 		next_scene = "res://scenes/game.tscn"
+		print("inicio")
 	else:
-		if Jogo.word_size == 7:
-			next_scene = "res://scenes/game.tscn"
-		else:
-			next_scene = "res://scenes/menu.tscn"
+		next_scene = "res://scenes/menu.tscn"
 		Jogo.word_size = 4 # Voltando para a primeira fase
 		Jogo.tempo_decorrido = 0.0 # Resetando temporizador
 		Jogo.vidas = Configuracoes.config["vidas"]
+		Jogo.salvar_dados_no_csv()
 	get_tree().change_scene_to_file(next_scene)
 
 
