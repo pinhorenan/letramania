@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://klts52bc3exe"]
 
-[ext_resource type="Texture2D" uid="uid://bm2k102hr7l15" path="res://assets/background.png" id="1_j6arj"]
+[ext_resource type="Texture2D" path="res://assets/background.png" id="1_j6arj"]
 [ext_resource type="Script" uid="uid://dk8enqjdeb3r4" path="res://scripts/configs/botoesConfig.gd" id="1_w7iws"]
 [ext_resource type="Texture2D" uid="uid://b1u1celrxklxs" path="res://assets/config/Retangulo_Opaco.png" id="3_bl5ny"]
 [ext_resource type="AudioStream" uid="uid://dkkhlhxm08ta2" path="res://assets/game/button-click.mp3" id="3_m5bkl"]

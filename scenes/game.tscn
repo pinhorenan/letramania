@@ -1,6 +1,6 @@
 [gd_scene load_steps=41 format=3 uid="uid://khsg2ndeh4xi"]
 
-[ext_resource type="Texture2D" uid="uid://bm2k102hr7l15" path="res://assets/background.png" id="1_itbuk"]
+[ext_resource type="Texture2D" path="res://assets/background.png" id="1_itbuk"]
 [ext_resource type="Script" uid="uid://dbe0sxw4gurj2" path="res://scripts/game/occupied.gd" id="2_0v8sj"]
 [ext_resource type="Script" uid="uid://dymwyinhnvnoy" path="res://scripts/game/colission_area.gd" id="2_65ee8"]
 [ext_resource type="Script" uid="uid://dgqjnibp70508" path="res://scripts/game/game_buttons.gd" id="2_75y6d"]
