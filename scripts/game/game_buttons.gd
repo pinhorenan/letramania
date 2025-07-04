@@ -57,6 +57,7 @@ func _ready():
 	confirmation_dialog.confirmed.connect(_on_confirmation_dialog_confirmed)
 	confirmation_dialog.canceled.connect(_on_confirmation_dialog_canceled)
 	
+	$Background.texture = load("res://assets/menu/background_" + Configuracoes.nome_tema + ".png")
 	ajustar_background()
 	Jogo.time_start = Jogo.get_time()
 	label_pontuacao.visible = Configuracoes.config.pontuacao_ativada

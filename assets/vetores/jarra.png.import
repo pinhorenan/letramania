@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxsne6joyvsjh"
-path="res://.godot/imported/Jarra1.png-ec00846ca90387758499e389390852e1.ctex"
+path="res://.godot/imported/jarra.png-81ad1d119b93181db6163f9061e88e6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores/Jarra1.png"
-dest_files=["res://.godot/imported/Jarra1.png-ec00846ca90387758499e389390852e1.ctex"]
+source_file="res://assets/vetores/jarra.png"
+dest_files=["res://.godot/imported/jarra.png-81ad1d119b93181db6163f9061e88e6f.ctex"]
 
 [params]
 

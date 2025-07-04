@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3afydy4wvvw0"
-path="res://.godot/imported/jarra.png-780630791ec9980287cc59fb69e890c6.ctex"
+uid="uid://btq728fkwb3m"
+path="res://.godot/imported/background_Padrão.png-4d86c013983d76002b70e57af4ef609a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vetores_old/jarra.png"
-dest_files=["res://.godot/imported/jarra.png-780630791ec9980287cc59fb69e890c6.ctex"]
+source_file="res://assets/menu/background_Padrão.png"
+dest_files=["res://.godot/imported/background_Padrão.png-4d86c013983d76002b70e57af4ef609a.ctex"]
 
 [params]
 

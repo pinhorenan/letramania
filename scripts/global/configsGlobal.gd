@@ -1,6 +1,7 @@
 extends Node
 
 const config_path = "user://configuracao.cfg"
+var lista_temas = ["Padrão", "Azul", "Verde", "Roxo"]
 
 var is_music_on: bool = true : set = set_music_on
 var config = {
@@ -8,13 +9,17 @@ var config = {
 	"pontuacao": 0,
 	"pontuacao_ativada": true,
 	"temporizador_ativado": true,
-	"nivel_de_dica": 20
+	"nivel_de_dica": 20,
+	"tema": 0
 }
+
+var nome_tema: String
 
 signal music_state_changed(is_on)
 
 func _ready():
 	carregar_todas_configuracoes()  # Carrega tudo ao iniciar
+	nome_tema = lista_temas[config.tema]
 
 # --------------------------- Áudio ---------------------------
 func set_music_on(value: bool) -> void:
@@ -35,6 +40,7 @@ func salvar_todas_configuracoes():
 	config_file.set_value("jogo", "pontuacao_ativada", config.pontuacao_ativada)
 	config_file.set_value("jogo", "temporizador_ativado", config.temporizador_ativado)
 	config_file.set_value("jogo", "nivel_de_dica", config.nivel_de_dica)
+	config_file.set_value("jogo", "tema", config.tema)
 	
 	var erro = config_file.save(config_path)
 	if erro != OK:
@@ -53,6 +59,7 @@ func carregar_todas_configuracoes():
 		config.pontuacao_ativada = config_file.get_value("jogo", "pontuacao_ativada", true)
 		config.temporizador_ativado = config_file.get_value("jogo", "temporizador_ativado", true)
 		config.nivel_de_dica = config_file.get_value("jogo", "nivel_de_dica", 20)
+		config.tema = config_file.get_value("jogo", "tema", 0)
 		
 		# Força tipos booleanos
 		config.pontuacao_ativada = bool(config.pontuacao_ativada)

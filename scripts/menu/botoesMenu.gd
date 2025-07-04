@@ -10,6 +10,7 @@ var texture_pressed
 var next_scene
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Background.texture = load("res://assets/menu/background_" + Configuracoes.nome_tema + ".png")
 	ajustar_background()
 	musica = AudioServer.get_bus_index(bus_name)
 	if Jogo.word_size == 6 and Jogo.vidas >= 0:
