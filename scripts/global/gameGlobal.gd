@@ -2,7 +2,6 @@ extends Node2D
 
 const FILE_PATH = "user://dados_partidas.csv"
 #var is_dragging = false
-var file
 var word_size = 3
 var tempo_decorrido: float = 0.0
 
@@ -136,7 +135,7 @@ func salvar_dados_no_csv():
 
 	# Verifica se o arquivo existe
 	if FileAccess.file_exists(caminho_arquivo):
-		file = FileAccess.open(caminho_arquivo, FileAccess.READ)
+		var file = FileAccess.open(caminho_arquivo, FileAccess.READ)
 		if file:
 			while not file.eof_reached():
 				var line = file.get_line()
@@ -154,11 +153,11 @@ func salvar_dados_no_csv():
 
 	# Adiciona o cabeçalho se o arquivo estava vazio
 	if linhas.is_empty():
-		linhas.append("ID, Completo?, Início, Fim, Tempo de Partida (s), Total Letras Selecionadas, Acertos, Erros, Erros Escolha, Erros Posição, Erro Área Inválida, Tempo Ociosidade Total (s), Pontuação Total, Tempo f1 (s), Tempo Ociosidade f1 (s), Acertos f1, Erros f1, Erros Escolha f1, Erros Posição f1, Pontos f1, Tempo f2 (s), Tempo Ociosidade f2 (s), Acertos f2, Erros f2, Erros Escolha f2, Erros Posição f2, Pontos f2, Tempo f3 (s), Tempo Ociosidade f3 (s), Scertos f3, Erros f3, Erros Escolha f3, Erros posição f3, Pontos f3, Tempo Médio por Letra (s), Tempo Médio por Acerto (s)")
+		linhas.append("ID, Completo?, Início, Fim, Tempo de Partida (s), Tempo Para Ajuda (s), Total Letras Selecionadas, Acertos, Erros, Erros Escolha, Erros Posição, Erro Área Inválida, Tempo Ociosidade Total (s), Pontuação Total, Tempo f1 (s), Tempo Ociosidade f1 (s), Acertos f1, Erros f1, Erros Escolha f1, Erros Posição f1, Pontos f1, Tempo f2 (s), Tempo Ociosidade f2 (s), Acertos f2, Erros f2, Erros Escolha f2, Erros Posição f2, Pontos f2, Tempo f3 (s), Tempo Ociosidade f3 (s), Scertos f3, Erros f3, Erros Escolha f3, Erros posição f3, Pontos f3, Tempo Médio por Letra (s), Tempo Médio por Acerto (s)")
 	# Adiciona os novos dados
-	linhas.append(str(id) + "," + str(completo) + "," + str(time_start) + "," + str(time_end) + "," + "%.2f" % tempo_decorrido + "," + str(letras_selecionadas) + "," + str(acertos) + "," + str(erros) + "," + str(erro_escolha) + "," + str(erro_posicao) + "," + str(erros_area_invalida) + "," + "%.2f" % total_idle_time + "," + str(pontuacao) + ","  + "%.2f" % tempo1 + "," + "%.2f" % total_idle_time1 + ","  + str(acertos1) + ","  + str(erros1) + ","  + str(erro_escolha1) + "," + str(erro_posicao1) + "," + str(pontos1) + "," + "%.2f" % tempo2 + "," + "%.2f" % total_idle_time2 + ","  + str(acertos2) + ","  + str(erros2) + ","  + str(erro_escolha2) + "," + str(erro_posicao2) + "," + str(pontos2) + "," + "%.2f" % tempo3 + "," + "%.2f" % total_idle_time3 + ","  + str(acertos3) + ","  + str(erros3) + ","  + str(erro_escolha3) + "," + str(erro_posicao3) + "," + str(pontos3) + "," + "%.2f" % media_letra + "," + "%.2f" % media_letra_certa)
+	linhas.append(str(id) + "," + str(completo) + "," + str(time_start) + "," + str(time_end) + "," + "%.2f" % tempo_decorrido + "," + str(Configuracoes.config.nivel_de_dica) + "," + str(letras_selecionadas) + "," + str(acertos) + "," + str(erros) + "," + str(erro_escolha) + "," + str(erro_posicao) + "," + str(erros_area_invalida) + "," + "%.2f" % total_idle_time + "," + str(pontuacao) + ","  + "%.2f" % tempo1 + "," + "%.2f" % total_idle_time1 + ","  + str(acertos1) + ","  + str(erros1) + ","  + str(erro_escolha1) + "," + str(erro_posicao1) + "," + str(pontos1) + "," + "%.2f" % tempo2 + "," + "%.2f" % total_idle_time2 + ","  + str(acertos2) + ","  + str(erros2) + ","  + str(erro_escolha2) + "," + str(erro_posicao2) + "," + str(pontos2) + "," + "%.2f" % tempo3 + "," + "%.2f" % total_idle_time3 + ","  + str(acertos3) + ","  + str(erros3) + ","  + str(erro_escolha3) + "," + str(erro_posicao3) + "," + str(pontos3) + "," + "%.2f" % media_letra + "," + "%.2f" % media_letra_certa)
 	# Salva tudo novamente no arquivo
-	file = FileAccess.open(caminho_arquivo, FileAccess.WRITE)
+	var file = FileAccess.open(caminho_arquivo, FileAccess.WRITE)
 	if file:
 		for line in linhas:
 			file.store_line(line)

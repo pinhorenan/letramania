@@ -117,7 +117,7 @@ func _gui_input(event: InputEvent) -> void:
 						else:
 							Jogo.set_inatividade_fase3()
 							Jogo.completo = "SIM"
-							#Jogo.salvar_dados_no_csv()
+							Jogo.salvar_dados_no_csv()
 						get_tree().change_scene_to_file("res://scenes/prox_fase.tscn")
 				else:
 					Jogo.add_erros()

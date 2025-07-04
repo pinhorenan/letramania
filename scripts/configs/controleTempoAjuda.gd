@@ -48,7 +48,7 @@ func _aumentar_vidas():
 
 func _diminuir_vidas():
 	botao_click.play()
-	if Configuracoes.config.nivel_de_dica == 1:
+	if Configuracoes.config.nivel_de_dica == 10:
 		tempo_de_dica = 30
 	else:
 		tempo_de_dica -= 10
