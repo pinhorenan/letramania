@@ -21,8 +21,8 @@ bool hasContraryNeighbour(vec2 uv, vec2 texture_pixel_size, sampler2D texture) {
 			offset = width - abs(x);
 		} else if (pattern == 1) {
 			offset = floor(sqrt(pow(width + 0.5, 2) -x * x));
-		} else if (pattern == 2) {
-			offset == width; // FLOAT_COMPARISON ALERTADO!! -> use 'abs(a-b) < 0.0001' para uma comparação aproximada, mas previsível.
+               } else if (pattern == 2) {
+                       offset = width; // Ajuste de comparação incorreta que podia gerar comportamento inesperado
 		}
 		
 		for (float j = -ceil(offset); j <= ceil(offset); j++) {

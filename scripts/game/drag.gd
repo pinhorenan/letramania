@@ -50,7 +50,7 @@ func game_tips():
 						if !is_tipping:
 							keyboard.tip_letter(current_letter[1], 0)
 							return
-						current_letter[0].color = "green"
+                                               current_letter[0].color = Color.GREEN
 						keyboard.tip_letter(current_letter[1], 1)
 						await get_tree().create_timer(0.5).timeout 
 						current_letter[0].color = original_color
